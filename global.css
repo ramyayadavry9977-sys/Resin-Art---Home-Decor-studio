@@ -1,0 +1,589 @@
+/* =========================================================
+   RESIN ART & HOME DECOR STUDIO
+   GLOBAL CSS
+   ========================================================= */
+
+
+/* =========================================================
+   1. GOOGLE FONTS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   2. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+    /* Brand Colors */
+    --primary-color: #6B3F5F;      /* Deep Plum */
+    --secondary-color: #D8C3A5;    /* Warm Sand */
+
+    /* Light Mode */
+    --bg-color: #FFFFFF;
+    --bg-light: #FAF8F6;
+    --card-color: #FFFFFF;
+    --text-color: #252126;
+    --text-light: #6F686D;
+    --border-color: #E8E1E5;
+
+    /* Common */
+    --white: #FFFFFF;
+    --black: #000000;
+
+    /* Typography */
+    --heading-font: "Playfair Display", serif;
+    --body-font: "Inter", sans-serif;
+
+    /* Layout */
+    --container-width: 1200px;
+    --section-padding: 90px;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    /* Transition */
+    --transition: 0.3s ease;
+
+    /* Shadow */
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   3. DARK MODE VARIABLES
+   ========================================================= */
+
+body.dark-mode {
+
+    --bg-color: #151315;
+    --bg-light: #1D1A1C;
+    --card-color: #211D20;
+
+    --text-color: #FFFFFF;
+    --text-light: #C8C1C5;
+
+    --border-color: #3A3438;
+
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   4. GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--body-font);
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+    font-family: var(--body-font);
+}
+
+
+/* =========================================================
+   5. COMMON ELEMENTS
+   ========================================================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+}
+
+
+/* =========================================================
+   6. CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(90%, var(--container-width));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   7. SECTION
+   ========================================================= */
+
+section {
+    width: 100%;
+}
+
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section-light {
+    background: var(--bg-light);
+}
+
+
+/* =========================================================
+   8. COMMON HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   9. SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   10. COMMON BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 46px;
+    padding: 12px 24px;
+
+    border-radius: var(--radius-sm);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+
+    white-space: nowrap;
+}
+
+
+/* Primary Button */
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: #57334D;
+    border-color: #57334D;
+    transform: translateY(-2px);
+}
+
+
+/* Secondary Button */
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   11. ICON BUTTON
+   ========================================================= */
+
+.icon-btn {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.icon-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.icon-btn svg {
+    width: 19px;
+    height: 19px;
+    stroke-width: 1.8;
+}
+
+
+/* =========================================================
+   12. COMMON CARD
+   ========================================================= */
+
+.card {
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        background-color var(--transition),
+        border-color var(--transition);
+}
+
+
+/* =========================================================
+   13. COMMON GRID
+   ========================================================= */
+
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+/* =========================================================
+   14. COMMON IMAGE STYLES
+   ========================================================= */
+
+.image-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   15. FORMS
+   ========================================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-control {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 12px 14px;
+
+    background: var(--card-color);
+    color: var(--text-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+
+    font-size: 0.95rem;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(107, 63, 95, 0.12);
+}
+
+textarea.form-control {
+    min-height: 140px;
+    resize: vertical;
+}
+
+
+/* =========================================================
+   16. LINKS
+   ========================================================= */
+
+.text-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.text-link:hover {
+    color: #57334D;
+}
+
+
+/* =========================================================
+   17. BADGES
+   ========================================================= */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 12px;
+
+    border-radius: 50px;
+
+    background: var(--secondary-color);
+    color: var(--primary-color);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   18. DIVIDER
+   ========================================================= */
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border-color);
+}
+
+
+/* =========================================================
+   19. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   20. SELECTION
+   ========================================================= */
+
+::selection {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+
+/* =========================================================
+   21. RTL SUPPORT
+   ========================================================= */
+
+html[dir="rtl"] body {
+    direction: rtl;
+}
+
+html[dir="rtl"] .section-heading {
+    text-align: center;
+}
+
+html[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+
+/* =========================================================
+   22. ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   23. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    :root {
+        --section-padding: 70px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    :root {
+        --section-padding: 60px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .btn {
+        min-height: 44px;
+        padding: 10px 20px;
+    }
+
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    :root {
+        --section-padding: 50px;
+    }
+
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

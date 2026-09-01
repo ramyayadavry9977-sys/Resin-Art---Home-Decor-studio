@@ -1,0 +1,4274 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   HEADER CONTAINER
+========================================================= */
+
+.header-container {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 11px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+}
+
+
+/* Logo circle */
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* Logo text */
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.1;
+}
+
+
+.logo-text strong {
+    font-family: var(--heading-font);
+
+    font-size: 1.25rem;
+
+    color: var(--primary-color);
+
+    transition: color 0.3s ease;
+}
+
+
+.logo-text small {
+    margin-top: 4px;
+
+    font-family: var(--body-font);
+
+    font-size: 0.63rem;
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--text-light);
+
+    transition: color 0.3s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav {
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 26px;
+}
+
+
+/* Normal nav links */
+
+.nav-link {
+    position: relative;
+
+    padding: 8px 0;
+
+    color: var(--text-color);
+
+    font-family: var(--body-font);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Underline */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary-color);
+
+    transition: width 0.3s ease;
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* Active page */
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+
+.nav-link.active::after {
+    width: 100%;
+    background: var(--primary-color);
+}
+
+
+/* =========================================================
+   HOME DROPDOWN
+========================================================= */
+
+.nav-dropdown {
+    position: relative;
+}
+
+
+.nav-dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 8px 0;
+
+    border: none;
+    background: transparent;
+
+    color: var(--text-color);
+
+    font-family: var(--body-font);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Dropdown arrow */
+
+.nav-dropdown-btn svg {
+    width: 15px;
+    height: 15px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Home hover */
+
+.nav-dropdown:hover .nav-dropdown-btn {
+    color: var(--primary-color);
+}
+
+
+.nav-dropdown:hover .nav-dropdown-btn svg {
+    transform: rotate(180deg);
+}
+
+
+/* Home active */
+
+.nav-dropdown-btn.active {
+    color: var(--primary-color) !important;
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 15px);
+    left: 50%;
+
+    transform: translateX(-50%) translateY(10px);
+
+    width: 210px;
+
+    padding: 8px;
+
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-md);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Dropdown small arrow */
+
+.dropdown-menu::before {
+    content: "";
+
+    position: absolute;
+
+    top: -6px;
+    left: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    background: var(--card-color);
+
+    border-left: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+
+    transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* Show dropdown */
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* =========================================================
+   DROPDOWN LINKS
+========================================================= */
+
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border-radius: var(--radius-sm);
+
+    color: var(--text-color);
+
+    font-family: var(--body-font);
+
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Dropdown hover */
+
+.dropdown-link:hover {
+    background: var(--secondary-color);
+
+    color: var(--primary-color);
+}
+
+
+/* Dropdown active */
+
+.dropdown-link.active {
+    background: var(--primary-color);
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HEADER ICON BUTTON
+========================================================= */
+
+.header-icon-btn {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-sm);
+
+    background: transparent;
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Icon */
+
+.header-icon-btn svg {
+    width: 19px;
+    height: 19px;
+
+    stroke-width: 1.8;
+}
+
+
+/* Hover */
+
+.header-icon-btn:hover {
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    border-color: var(--primary-color);
+}
+
+
+/* =========================================================
+   GET STARTED BUTTON
+========================================================= */
+
+.header-cta {
+    min-width: 125px;
+
+    height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20px;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    border: 1px solid var(--primary-color);
+
+    border-radius: var(--radius-sm);
+
+    text-decoration: none;
+
+    font-family: var(--body-font);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.header-cta:hover {
+    background: #56304C;
+
+    border-color: #56304C;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-sm);
+
+    background: transparent;
+
+    color: var(--text-color);
+
+    cursor: pointer;
+}
+
+
+.menu-btn svg {
+    width: 21px;
+    height: 21px;
+}
+
+
+/* =========================================================
+   DARK MODE
+   IMPORTANT:
+   ONLY HEADER ELEMENTS CHANGE.
+   PAGE BACKGROUND IS NOT CHANGED HERE.
+========================================================= */
+
+
+/* Header */
+
+body.dark-mode .site-header {
+    background: #1d181c !important;
+
+    border-bottom-color: #40343d !important;
+}
+
+
+/* Logo */
+
+body.dark-mode .logo-text strong {
+    color: #D8C3A5 !important;
+}
+
+
+body.dark-mode .logo-text small {
+    color: #c9bcc4 !important;
+}
+
+
+/* Navigation links */
+
+body.dark-mode .main-nav .nav-link {
+    color: #f5efe8 !important;
+}
+
+
+body.dark-mode .main-nav .nav-link:hover {
+    color: #D8C3A5 !important;
+}
+
+
+body.dark-mode .main-nav .nav-link.active {
+    color: #D8C3A5 !important;
+}
+
+
+body.dark-mode .main-nav .nav-link.active::after {
+    background: #D8C3A5 !important;
+}
+
+
+/* Home dropdown button */
+
+body.dark-mode .nav-dropdown-btn {
+    color: #f5efe8 !important;
+}
+
+
+body.dark-mode .nav-dropdown-btn:hover {
+    color: #D8C3A5 !important;
+}
+
+
+body.dark-mode .nav-dropdown-btn.active {
+    color: #D8C3A5 !important;
+}
+
+
+/* Dropdown */
+
+body.dark-mode .dropdown-menu {
+    background: #282126 !important;
+
+    border-color: #4a3b45 !important;
+}
+
+
+body.dark-mode .dropdown-menu::before {
+    background: #282126 !important;
+
+    border-color: #4a3b45 !important;
+}
+
+
+/* Dropdown links */
+
+body.dark-mode .dropdown-link {
+    color: #f5efe8 !important;
+}
+
+
+body.dark-mode .dropdown-link:hover {
+    background: #362a33 !important;
+
+    color: #D8C3A5 !important;
+}
+
+
+body.dark-mode .dropdown-link.active {
+    background: #6B3F5F !important;
+
+    color: #ffffff !important;
+}
+
+
+/* Header icons */
+
+body.dark-mode .header-icon-btn {
+    background: #282126 !important;
+
+    color: #f5efe8 !important;
+
+    border-color: #4a3b45 !important;
+}
+
+
+body.dark-mode .header-icon-btn:hover {
+    background: #6B3F5F !important;
+
+    color: #ffffff !important;
+
+    border-color: #6B3F5F !important;
+}
+
+
+/* Get Started */
+
+body.dark-mode .header-cta {
+    background: #6B3F5F !important;
+
+    color: #ffffff !important;
+
+    border-color: #6B3F5F !important;
+}
+
+
+body.dark-mode .header-cta:hover {
+    background: #56304C !important;
+
+    border-color: #56304C !important;
+}
+
+
+/* Mobile button */
+
+body.dark-mode .menu-btn {
+    background: #282126 !important;
+
+    color: #f5efe8 !important;
+
+    border-color: #4a3b45 !important;
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+html[dir="rtl"] .site-header {
+    direction: rtl;
+}
+
+
+html[dir="rtl"] .main-nav {
+    direction: rtl;
+}
+
+
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+
+    right: 50%;
+
+    transform:
+        translateX(50%)
+        translateY(10px);
+}
+
+
+html[dir="rtl"] .nav-dropdown:hover .dropdown-menu,
+html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
+    transform:
+        translateX(50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .nav-link,
+    .nav-dropdown-btn {
+        font-size: 0.85rem;
+    }
+
+    .header-cta {
+        min-width: auto;
+
+        padding: 0 16px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-container {
+        min-height: 70px;
+    }
+
+
+    /* Navigation becomes mobile menu */
+
+    .main-nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 20px;
+
+        background: var(--bg-color);
+
+        border-bottom: 1px solid var(--border-color);
+
+        box-shadow: var(--shadow-md);
+
+        transform: none;
+    }
+
+
+    /* Open mobile menu */
+
+    .main-nav.active {
+        display: flex;
+    }
+
+
+    /* Mobile nav links */
+
+    .nav-link {
+        width: 100%;
+
+        padding: 12px 10px;
+    }
+
+
+    .nav-link::after {
+        display: none;
+    }
+
+
+    /* Home dropdown */
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+
+    .nav-dropdown-btn {
+        width: 100%;
+
+        justify-content: space-between;
+
+        padding: 13px 10px;
+
+        border-bottom: 1px solid var(--border-color);
+    }
+
+
+    .dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 5px 0 5px 15px;
+
+        transform: none;
+
+        display: none;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        border: none;
+
+        border-radius: 0;
+
+        box-shadow: none;
+
+        background: transparent;
+    }
+
+
+    .nav-dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+
+    .dropdown-menu::before {
+        display: none;
+    }
+
+
+    .dropdown-link {
+        padding: 10px;
+    }
+
+
+    /* Hide Get Started */
+
+    .header-cta {
+        display: none;
+    }
+
+
+    /* Show menu button */
+
+    .menu-btn {
+        display: inline-flex;
+    }
+
+
+    /* Dark mobile menu */
+
+    body.dark-mode .main-nav {
+        background: #1d181c !important;
+
+        border-bottom-color: #40343d !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .logo {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .logo-text small {
+        display: none;
+    }
+
+
+    .header-actions {
+        gap: 6px;
+    }
+
+
+    .header-icon-btn,
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .logo-text small {
+        display: none;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-actions {
+        gap: 6px;
+    }
+
+    .header-icon-btn,
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* =========================================
+   PRICING HERO
+========================================= */
+
+.pricing-hero {
+    width: 100%;
+
+    padding: 70px 0 80px;
+
+    background: var(--bg-color);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.pricing-hero-container {
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.pricing-hero-content {
+    padding: 20px 0;
+}
+
+
+.pricing-hero-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+.pricing-hero-label {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.pricing-hero h1 {
+    margin: 0;
+
+    max-width: 620px;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(48px, 5vw, 72px);
+
+    line-height: 1.02;
+
+    font-weight: 500;
+}
+
+
+.pricing-hero h1 em {
+    display: block;
+
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   PARAGRAPH
+========================================= */
+
+.pricing-hero-content p {
+    max-width: 520px;
+
+    margin-top: 28px;
+
+    color: var(--text-light);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.pricing-hero-image {
+    position: relative;
+
+    width: 100%;
+
+    height: 520px;
+
+    overflow: hidden;
+
+    background: var(--secondary-color);
+}
+
+
+.pricing-hero-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.pricing-hero-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   IMAGE LABEL
+========================================= */
+
+.pricing-hero-image-label {
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    color: #ffffff;
+}
+
+
+.pricing-hero-image-label span {
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.85;
+}
+
+
+.pricing-hero-image-label strong {
+    margin-top: 4px;
+
+    font-family: var(--heading-font);
+
+    font-size: 20px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.pricing-hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(35, 22, 30, 0.65),
+        transparent 50%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .pricing-hero {
+    background: var(--bg-color);
+}
+
+
+body.dark-mode .pricing-hero-image {
+    background: #30242d;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .pricing-hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .pricing-hero-content {
+        text-align: center;
+    }
+
+    .pricing-hero h1 {
+        margin: auto;
+    }
+
+    .pricing-hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pricing-hero-image {
+        height: 450px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .pricing-hero {
+        padding: 50px 0 60px;
+    }
+
+    .pricing-hero-container {
+        width: 90%;
+
+        gap: 35px;
+    }
+
+    .pricing-hero h1 {
+        font-size: 44px;
+    }
+
+    .pricing-hero-image {
+        height: 360px;
+    }
+}
+
+/* =========================================
+   PRICING PLANS
+========================================= */
+
+.pricing-plans-section {
+    width: 100%;
+
+    padding: 40px 0;
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+.pricing-plans-container {
+    width: min(1200px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.pricing-plans-heading {
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.pricing-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+.pricing-label {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+.pricing-plans-heading h2 {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+
+.pricing-plans-heading h2 em {
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+
+.pricing-plans-heading p {
+    max-width: 600px;
+
+    margin: 18px auto 0;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   PRICING GRID
+========================================= */
+
+.pricing-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.pricing-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 510px;
+
+    padding: 34px 30px;
+
+    background: var(--bg-color);
+
+    border: 1px solid var(--border-color);
+
+    transition:
+        transform 0.3s ease,
+        border-color var(--transition),
+        background-color var(--transition);
+}
+
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--primary-color);
+}
+
+
+/* =========================================
+   FEATURED CARD
+========================================= */
+
+.pricing-card.featured {
+    border: 2px solid var(--primary-color);
+}
+
+
+.popular-badge {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 7px 15px;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   CARD NUMBER
+========================================= */
+
+.pricing-card-number {
+    margin-bottom: 20px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.pricing-card h3 {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 32px;
+
+    font-weight: 500;
+}
+
+
+.pricing-description {
+    min-height: 55px;
+
+    margin: 12px 0 25px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.pricing-price {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.pricing-price small {
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+
+.pricing-price strong {
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 38px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.pricing-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 25px 0;
+
+    background: var(--border-color);
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.pricing-features {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.pricing-features li {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+.pricing-features li span {
+    color: var(--primary-color);
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.pricing-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 13px 18px;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    border: 1px solid var(--primary-color);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.pricing-btn span {
+    transition: transform 0.3s ease;
+}
+
+
+.pricing-btn:hover {
+    background: transparent;
+
+    color: var(--primary-color);
+}
+
+
+.pricing-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pricing-card.featured {
+        grid-column: span 2;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .pricing-plans-section {
+        padding: 60px 0;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card.featured {
+        grid-column: auto;
+    }
+
+    .pricing-card {
+        min-height: 480px;
+    }
+}
+
+/* =========================================
+   SECTION 03 — WHAT'S INCLUDED
+========================================= */
+
+.included-section {
+    width: 100%;
+
+    padding: 85px 0;
+
+    background: var(--bg-color);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.included-container {
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.included-content {
+    max-width: 500px;
+}
+
+
+.included-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+.included-label {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.included-content h2 {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(42px, 4.5vw, 62px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+
+.included-content h2 em {
+    display: block;
+
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.included-content > p {
+    max-width: 470px;
+
+    margin-top: 24px;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.included-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding: 13px 22px;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    border: 1px solid var(--primary-color);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.included-btn span {
+    transition: transform 0.3s ease;
+}
+
+
+.included-btn:hover {
+    background: transparent;
+
+    color: var(--primary-color);
+}
+
+
+.included-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   RIGHT FEATURES
+========================================= */
+
+.included-features {
+    width: 100%;
+
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* =========================================
+   FEATURE ITEM
+========================================= */
+
+.included-item {
+    display: grid;
+
+    grid-template-columns: 50px 1fr 30px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 120px;
+
+    padding: 22px 5px;
+
+    border-bottom: 1px solid var(--border-color);
+
+    transition:
+        background-color 0.3s ease,
+        padding 0.3s ease;
+}
+
+
+.included-item:hover {
+    padding-left: 15px;
+
+    padding-right: 15px;
+
+    background: var(--secondary-color);
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.included-item-number {
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.included-item-content h3 {
+    margin: 0 0 7px;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 22px;
+
+    font-weight: 500;
+}
+
+
+.included-item-content p {
+    max-width: 520px;
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.included-arrow {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+
+    height: 30px;
+
+    color: var(--primary-color);
+
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.included-item:hover .included-arrow {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .included-section {
+    background: var(--bg-color);
+}
+
+
+body.dark-mode .included-item:hover {
+    background: var(--secondary-color);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .included-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .included-content {
+        max-width: 700px;
+
+        text-align: center;
+
+        margin: auto;
+    }
+
+    .included-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .included-btn {
+        margin-top: 25px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .included-section {
+        padding: 60px 0;
+    }
+
+    .included-container {
+        width: 90%;
+
+        gap: 35px;
+    }
+
+    .included-content h2 {
+        font-size: 42px;
+    }
+
+    .included-item {
+        grid-template-columns: 35px 1fr 25px;
+
+        gap: 12px;
+
+        min-height: 110px;
+
+        padding: 18px 0;
+    }
+
+    .included-item-content h3 {
+        font-size: 19px;
+    }
+
+    .included-item-content p {
+        font-size: 12px;
+    }
+
+    .included-arrow {
+        font-size: 16px;
+    }
+
+}
+
+
+
+/* =========================================
+   SECTION 04 — CUSTOM ORDER
+========================================= */
+
+.custom-order-section {
+    width: 100%;
+
+    padding: 80px 0;
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.custom-order-container {
+    width: min(1200px, 92%);
+
+    min-height: 500px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: stretch;
+
+    gap: 0;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.custom-order-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 60px;
+
+    background: var(--bg-color);
+
+    border: 1px solid var(--border-color);
+}
+
+
+.custom-order-number {
+    margin-bottom: 8px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+.custom-order-label {
+    margin-bottom: 25px;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.custom-order-content h2 {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(42px, 4.5vw, 62px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+
+.custom-order-content h2 em {
+    display: block;
+
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.custom-order-content p {
+    max-width: 480px;
+
+    margin-top: 25px;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.custom-order-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    align-self: flex-start;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding: 14px 23px;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    border: 1px solid var(--primary-color);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.custom-order-btn span {
+    transition: transform 0.3s ease;
+}
+
+
+.custom-order-btn:hover {
+    background: transparent;
+
+    color: var(--primary-color);
+}
+
+
+.custom-order-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.custom-order-image {
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    background: var(--secondary-color);
+}
+
+
+.custom-order-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.custom-order-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.custom-order-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(40, 25, 35, 0.55),
+        transparent 55%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE BADGE
+========================================= */
+
+.custom-order-badge {
+    position: absolute;
+
+    right: 28px;
+
+    bottom: 28px;
+
+    z-index: 2;
+
+    width: 105px;
+
+    height: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+.custom-order-badge span {
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+}
+
+
+.custom-order-badge strong {
+    margin-top: 4px;
+
+    font-family: var(--heading-font);
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .custom-order-section {
+    background: var(--card-color);
+}
+
+
+body.dark-mode .custom-order-content {
+    background: var(--bg-color);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .custom-order-container {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-order-content {
+        padding: 50px 40px;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .custom-order-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .custom-order-btn {
+        align-self: center;
+    }
+
+    .custom-order-image {
+        min-height: 430px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .custom-order-section {
+        padding: 60px 0;
+    }
+
+    .custom-order-container {
+        width: 90%;
+    }
+
+    .custom-order-content {
+        padding: 45px 25px;
+    }
+
+    .custom-order-content h2 {
+        font-size: 42px;
+    }
+
+    .custom-order-image {
+        min-height: 350px;
+    }
+
+    .custom-order-badge {
+        width: 85px;
+
+        height: 85px;
+
+        right: 18px;
+
+        bottom: 18px;
+    }
+
+    .custom-order-badge strong {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   SECTION 05 — SIZE & PRICING GUIDE
+========================================= */
+
+.size-pricing-section {
+    width: 100%;
+
+    padding: 85px 0;
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.size-pricing-container {
+    width: min(1200px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.size-pricing-heading {
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.size-pricing-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+.size-pricing-label {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+.size-pricing-heading h2 {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(42px, 5vw, 62px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+
+.size-pricing-heading h2 em {
+    display: block;
+
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+
+.size-pricing-heading p {
+    max-width: 620px;
+
+    margin: 20px auto 0;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   PRICE GRID
+========================================= */
+
+.size-pricing-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   PRICE CARD
+========================================= */
+
+.size-price-card {
+    min-height: 330px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 28px 24px;
+
+    background: var(--bg-color);
+
+    border: 1px solid var(--border-color);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color var(--transition);
+}
+
+
+.size-price-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--primary-color);
+}
+
+
+/* =========================================
+   FEATURED
+========================================= */
+
+.size-price-card.featured-size {
+    background: var(--primary-color);
+
+    border-color: var(--primary-color);
+
+    color: #ffffff;
+}
+
+
+.size-price-card.featured-size
+.size-price-number,
+
+.size-price-card.featured-size
+.size-price-size,
+
+.size-price-card.featured-size h3,
+
+.size-price-card.featured-size p,
+
+.size-price-card.featured-size
+.size-price-bottom span,
+
+.size-price-card.featured-size
+.size-price-bottom strong {
+    color: #ffffff;
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.size-price-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+.featured-size .size-price-top {
+    border-color: rgba(255,255,255,0.3);
+}
+
+
+.size-price-number {
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+.size-price-size {
+    color: var(--primary-color);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.size-price-card h3 {
+    margin: 25px 0 10px;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.size-price-card p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.size-price-bottom {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+}
+
+
+.size-price-bottom span {
+    color: var(--text-light);
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.size-price-bottom strong {
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 30px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   NOTE
+========================================= */
+
+.size-pricing-note {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    padding: 15px 20px;
+
+    border: 1px solid var(--border-color);
+
+    background: var(--bg-color);
+}
+
+
+.size-pricing-note span {
+    color: var(--primary-color);
+
+    font-size: 14px;
+}
+
+
+.size-pricing-note p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .size-pricing-section {
+    background: var(--card-color);
+}
+
+body.dark-mode .size-price-card {
+    background: var(--bg-color);
+}
+
+body.dark-mode .size-pricing-note {
+    background: var(--bg-color);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .size-pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .size-pricing-section {
+        padding: 60px 0;
+    }
+
+    .size-pricing-heading {
+        margin-bottom: 35px;
+    }
+
+    .size-pricing-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .size-price-card {
+        min-height: 280px;
+    }
+
+    .size-pricing-note {
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+}
+
+
+/* =========================================
+   SECTION 04 — CUSTOM ORDER
+========================================= */
+
+.custom-order-section {
+    width: 100%;
+
+    padding: 85px 0;
+
+    background: var(--bg-color);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.custom-order-container {
+    width: min(1200px, 92%);
+
+    min-height: 560px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.custom-order-image {
+    position: relative;
+
+    min-height: 560px;
+
+    overflow: hidden;
+
+    background: var(--secondary-color);
+}
+
+
+.custom-order-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.custom-order-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* Image overlay */
+
+.custom-order-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(45, 27, 39, 0.7),
+        transparent 60%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE TEXT
+========================================= */
+
+.custom-order-image-text {
+    position: absolute;
+
+    left: 30px;
+    bottom: 30px;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    color: #ffffff;
+}
+
+
+.custom-order-image-text span {
+    font-size: 10px;
+
+    letter-spacing: 0.18em;
+
+    font-weight: 600;
+}
+
+
+.custom-order-image-text strong {
+    margin-top: 5px;
+
+    font-family: var(--heading-font);
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.custom-order-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 60px;
+
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-left: none;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.custom-order-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.custom-order-label {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.custom-order-content h2 {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(44px, 4.5vw, 62px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+
+.custom-order-content h2 em {
+    display: block;
+
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.custom-order-content > p {
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.custom-order-features {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.custom-feature {
+    padding: 15px 12px;
+
+    border-top: 1px solid var(--border-color);
+}
+
+
+.custom-feature span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+
+.custom-feature p {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.custom-order-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    align-self: flex-start;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding: 14px 23px;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    border: 1px solid var(--primary-color);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.custom-order-btn span {
+    transition: transform 0.3s ease;
+}
+
+
+.custom-order-btn:hover {
+    background: transparent;
+
+    color: var(--primary-color);
+}
+
+
+.custom-order-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .custom-order-section {
+    background: var(--bg-color);
+}
+
+
+body.dark-mode .custom-order-content {
+    background: var(--card-color);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .custom-order-container {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-order-image {
+        min-height: 450px;
+    }
+
+    .custom-order-content {
+        padding: 50px 40px;
+
+        border-left: 1px solid var(--border-color);
+
+        border-top: none;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .custom-order-section {
+        padding: 60px 0;
+    }
+
+    .custom-order-container {
+        width: 90%;
+    }
+
+    .custom-order-image {
+        min-height: 350px;
+    }
+
+    .custom-order-content {
+        padding: 40px 25px;
+    }
+
+    .custom-order-content h2 {
+        font-size: 42px;
+    }
+
+    .custom-order-features {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .custom-feature {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .custom-feature span {
+        margin: 0;
+
+        min-width: 25px;
+    }
+
+    .custom-order-btn {
+        width: 100%;
+    }
+
+}
+
+
+
+/* =========================================
+   SECTION 07 — PRICING FAQ
+========================================= */
+
+.pricing-faq-section {
+    width: 100%;
+
+    padding: 90px 0;
+
+    background: var(--bg-color);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.pricing-faq-container {
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   LEFT INTRO
+========================================= */
+
+.pricing-faq-intro {
+    position: sticky;
+
+    top: 120px;
+}
+
+
+.pricing-faq-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+.pricing-faq-label {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.pricing-faq-intro h2 {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(42px, 4.5vw, 60px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+
+.pricing-faq-intro h2 em {
+    display: block;
+
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.pricing-faq-intro > p {
+    max-width: 420px;
+
+    margin-top: 22px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.pricing-faq-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+    padding: 13px 21px;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    border: 1px solid var(--primary-color);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.pricing-faq-btn span {
+    transition: transform 0.3s ease;
+}
+
+
+.pricing-faq-btn:hover {
+    background: transparent;
+
+    color: var(--primary-color);
+}
+
+
+.pricing-faq-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   FAQ LIST
+========================================= */
+
+.pricing-faq-list {
+    width: 100%;
+
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* =========================================
+   FAQ ITEM
+========================================= */
+
+.pricing-faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+/* =========================================
+   QUESTION
+========================================= */
+
+.pricing-faq-question {
+    width: 100%;
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 5px;
+
+    background: transparent;
+
+    color: var(--text-color);
+
+    border: none;
+
+    text-align: left;
+
+    font-family: var(--body-font);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.pricing-faq-question:hover {
+    color: var(--primary-color);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.pricing-faq-question svg {
+    width: 18px;
+
+    height: 18px;
+
+    flex-shrink: 0;
+
+    color: var(--primary-color);
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================================
+   ANSWER
+========================================= */
+
+.pricing-faq-answer {
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows 0.35s ease;
+}
+
+
+.pricing-faq-answer p {
+    overflow: hidden;
+
+    max-width: 680px;
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   OPEN FAQ
+========================================= */
+
+.pricing-faq-item.active
+.pricing-faq-answer {
+    grid-template-rows: 1fr;
+}
+
+
+.pricing-faq-item.active
+.pricing-faq-answer p {
+    padding-bottom: 22px;
+}
+
+
+.pricing-faq-item.active
+.pricing-faq-question {
+    color: var(--primary-color);
+}
+
+
+.pricing-faq-item.active
+.pricing-faq-question svg {
+    transform: rotate(45deg);
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .pricing-faq-section {
+    background: var(--bg-color);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .pricing-faq-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .pricing-faq-intro {
+        position: static;
+
+        text-align: center;
+    }
+
+    .pricing-faq-intro > p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .pricing-faq-section {
+        padding: 65px 0;
+    }
+
+    .pricing-faq-container {
+        width: 90%;
+
+        gap: 35px;
+    }
+
+    .pricing-faq-intro h2 {
+        font-size: 42px;
+    }
+
+    .pricing-faq-question {
+        min-height: 70px;
+
+        padding: 17px 0;
+
+        font-size: 14px;
+    }
+
+    .pricing-faq-answer p {
+        font-size: 12px;
+    }
+
+    .pricing-faq-btn {
+        margin-top: 22px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   1. FOOTER
+===================================================== */
+
+.site-footer {
+    background: var(--bg-light);
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-color);
+    
+}
+
+
+
+
+/* =====================================================
+   2. FOOTER MAIN
+===================================================== */
+
+.footer-main {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1.4fr;
+
+    gap: 50px;
+
+    padding: 65px 0 50px;
+}
+
+
+/* =====================================================
+   3. FOOTER BRAND
+===================================================== */
+
+.footer-brand {
+    max-width: 340px;
+}
+
+
+/* Footer Logo */
+
+.footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Logo Mark */
+
+.footer-logo-mark {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-color);
+
+    color: var(--secondary-color);
+
+    border-radius: 50%;
+}
+
+
+.footer-logo-mark svg {
+    width: 21px;
+    height: 21px;
+
+    stroke-width: 1.8;
+}
+
+
+/* Logo Text */
+
+.footer-logo-text {
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.1;
+}
+
+
+.footer-logo-text strong {
+    font-family: var(--heading-font);
+
+    font-size: 1.3rem;
+
+    font-weight: 600;
+
+    color: var(--primary-color);
+}
+
+
+.footer-logo-text small {
+    margin-top: 4px;
+
+    font-size: 0.58rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+
+    color: var(--text-light);
+}
+
+
+/* Footer Description */
+
+.footer-brand > p {
+    max-width: 330px;
+
+    margin-bottom: 22px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   4. SOCIAL ICONS
+===================================================== */
+
+.footer-social {
+    display: flex;
+
+    align-items: center;
+    font-size: 17px;
+    gap: 8px;
+}
+
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-sm);
+
+    color: var(--text-color);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+
+.footer-social a svg {
+    width: 17px;
+    height: 17px;
+
+    stroke-width: 1.8;
+}
+
+
+.footer-social a:hover {
+    background: var(--primary-color);
+
+    color: var(--white);
+
+    border-color: var(--primary-color);
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   5. FOOTER COLUMNS
+===================================================== */
+
+.footer-column h3 {
+    margin-bottom: 18px;
+
+    font-family: var(--heading-font);
+
+    font-size: 1.15rem;
+
+    color: var(--text-color);
+}
+
+
+.footer-column ul {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.footer-column ul a {
+    color: var(--text-light);
+
+    font-size: 0.88rem;
+
+    transition:
+        color var(--transition),
+        padding-left var(--transition);
+}
+
+
+.footer-column ul a:hover {
+    color: var(--primary-color);
+
+    padding-left: 4px;
+}
+
+
+/* =====================================================
+   6. CONTACT
+===================================================== */
+
+.footer-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.footer-contact > a,
+.footer-address {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: var(--text-light);
+
+    font-size: 0.86rem;
+
+    line-height: 1.5;
+}
+
+
+.footer-contact svg {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: var(--primary-color);
+
+    stroke-width: 1.8;
+}
+
+
+.footer-contact > a:hover {
+    color: var(--primary-color);
+}
+
+
+/* =====================================================
+   7. NEWSLETTER
+===================================================== */
+
+.footer-newsletter {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 28px 0;
+
+    border-top: 1px solid var(--border-color);
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+/* Newsletter Content */
+
+.newsletter-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.newsletter-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--secondary-color);
+
+    color: var(--primary-color);
+
+    border-radius: 50%;
+}
+
+
+.newsletter-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+.newsletter-content h3 {
+    margin-bottom: 3px;
+
+    font-size: 1.15rem;
+}
+
+
+.newsletter-content p {
+    font-size: 0.82rem;
+}
+
+
+/* =====================================================
+   9. FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.footer-bottom p {
+    font-size: 0.78rem;
+}
+
+
+.footer-legal {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.footer-legal a {
+    color: var(--text-light);
+
+    font-size: 0.78rem;
+
+    transition: color var(--transition);
+}
+
+
+.footer-legal a:hover {
+    color: var(--primary-color);
+}
+
+
+/* =====================================================
+   10. TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .footer-main {
+        grid-template-columns: 1.5fr 1fr 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-contact {
+        grid-column: span 3;
+    }
+
+    .footer-newsletter {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .newsletter-form {
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   11. MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 50px 0 40px;
+    }
+
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+
+    .footer-contact {
+        grid-column: auto;
+    }
+
+
+    .footer-newsletter {
+        gap: 20px;
+
+        padding: 25px 0;
+    }
+
+
+    .newsletter-form {
+        width: 100%;
+    }
+
+
+    .footer-bottom {
+        min-height: auto;
+
+        padding: 22px 0;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    .footer-legal {
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =====================================================
+   12. SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .newsletter-content {
+        align-items: flex-start;
+    }
+
+
+    .newsletter-form {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .newsletter-form input {
+        border-right: 1px solid var(--border-color);
+
+        border-radius: var(--radius-sm);
+    }
+
+
+    .newsletter-form .btn {
+        width: 100%;
+
+        border-radius: var(--radius-sm);
+    }
+
+
+    .footer-legal {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+}
+
+
+/* =====================================================
+   13. RTL
+===================================================== */
+
+html[dir="rtl"] .footer-column ul a:hover {
+    padding-left: 0;
+
+    padding-right: 4px;
+}
+
+
+html[dir="rtl"] .newsletter-form input {
+    border-right: 1px solid var(--border-color);
+
+    border-left: none;
+
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+
+html[dir="rtl"] .newsletter-form .btn {
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+
+@media (max-width: 480px) {
+
+    html[dir="rtl"] .newsletter-form input {
+        border-left: 1px solid var(--border-color);
+
+        border-radius: var(--radius-sm);
+    }
+
+    html[dir="rtl"] .newsletter-form .btn {
+        border-radius: var(--radius-sm);
+    }
+}

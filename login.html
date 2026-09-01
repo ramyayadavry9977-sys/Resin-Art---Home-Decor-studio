@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Resin Art & Home Decor</title>
+
+    <!-- Login page stylesheet -->
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- =========================
+             TOP RIGHT CONTROLS
+        ========================== -->
+        <div class="page-controls">
+
+            <!-- RTL -->
+            <button
+                type="button"
+                class="control-button"
+                id="rtlButton"
+                aria-label="Switch text direction"
+                title="RTL Mode"
+            >
+                ⇄
+            </button>
+
+            <!-- Dark Mode -->
+            <button
+                type="button"
+                class="control-button"
+                id="themeButton"
+                aria-label="Switch dark mode"
+                title="Dark Mode"
+            >
+                <span id="themeIcon">☾</span>
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             LOGIN CONTENT
+        ========================== -->
+        <div class="login-wrapper">
+
+            <!-- CLICKABLE BRAND -->
+            <a href="index.html" class="login-brand" aria-label="Go to Home Page">
+
+                <!-- Change logo path if your image is in another folder -->
+                <img src="images/logo-2.png" alt="Resin Art Logo" class="brand-logo">
+
+                <span class="brand-text">
+                    Resin<span>Studio</span>
+                </span>
+
+            </a>
+
+
+            <!-- LOGIN CARD -->
+            <section class="login-card">
+
+                <!-- Heading -->
+                <div class="login-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your account</p>
+                </div>
+
+
+                <!-- FORM -->
+                <form id="loginForm" novalidate>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                        >
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                            >
+
+                            <button
+                                type="button"
+                                id="passwordButton"
+                                class="password-button"
+                                aria-label="Show password"
+                            >
+                                <span id="passwordIcon">👁</span>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Error Message -->
+                    <p class="form-message" id="formMessage"></p>
+
+
+                    <!-- Remember + Forgot -->
+                    <div class="form-options">
+
+                        <label class="remember-label">
+                            <input type="checkbox" id="remember">
+                            <span>Remember Me</span>
+                        </label>
+
+                        <a href="#" class="forgot-link">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- Login -->
+                    <button type="submit" class="login-button">
+                        Login
+                    </button>
+
+
+                    <!-- Divider -->
+                    <div class="divider">
+                        <span></span>
+                        <small>OR</small>
+                        <span></span>
+                    </div>
+
+
+                    <button type="button" class="social-button" id="googleButton">
+    <i class="fa-brands fa-google social-icon google-icon"></i>
+    <span>Continue with Google</span>
+</button>
+
+                    <button type="button" class="social-button" id="appleButton">
+    <i class="fa-brands fa-apple social-icon"></i>
+    <span>Continue with Apple</span>
+</button>
+
+                </form>
+
+
+                <!-- Sign Up -->
+                <p class="signup-text">
+                    Don't have an account?
+                    <a href="signup.html">Sign Up</a>
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script>
+        // ==========================================
+// LOGIN PAGE ELEMENTS
+// ==========================================
+
+const loginForm = document.getElementById("loginForm");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const remember = document.getElementById("remember");
+
+const passwordButton = document.getElementById("passwordButton");
+const passwordIcon = document.getElementById("passwordIcon");
+
+const themeButton = document.getElementById("themeButton");
+const themeIcon = document.getElementById("themeIcon");
+
+const rtlButton = document.getElementById("rtlButton");
+
+const formMessage = document.getElementById("formMessage");
+
+
+// ==========================================
+// SHOW / HIDE PASSWORD
+// ==========================================
+
+passwordButton.addEventListener("click", function () {
+    const isHidden = password.type === "password";
+
+    password.type = isHidden ? "text" : "password";
+    passwordIcon.textContent = isHidden ? "◉" : "👁";
+
+    passwordButton.setAttribute(
+        "aria-label",
+        isHidden ? "Hide password" : "Show password"
+    );
+});
+
+
+// ==========================================
+// DARK MODE
+// ==========================================
+
+function setTheme(theme) {
+    const isDark = theme === "dark";
+
+    document.body.classList.toggle("dark-mode", isDark);
+    themeIcon.textContent = isDark ? "☀" : "☾";
+
+    localStorage.setItem("resinTheme", theme);
+}
+
+themeButton.addEventListener("click", function () {
+    const isDark = document.body.classList.contains("dark-mode");
+
+    setTheme(isDark ? "light" : "dark");
+});
+
+
+// ==========================================
+// RTL MODE
+// ==========================================
+
+function setDirection(direction) {
+    document.documentElement.setAttribute("dir", direction);
+    localStorage.setItem("resinDirection", direction);
+}
+
+rtlButton.addEventListener("click", function () {
+    const currentDirection = document.documentElement.getAttribute("dir");
+
+    setDirection(currentDirection === "rtl" ? "ltr" : "rtl");
+});
+
+
+// ==========================================
+// LOAD SAVED SETTINGS
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Theme
+    const savedTheme = localStorage.getItem("resinTheme");
+
+    if (savedTheme) {
+        setTheme(savedTheme);
+    }
+
+    // Direction
+    const savedDirection = localStorage.getItem("resinDirection");
+
+    if (savedDirection) {
+        setDirection(savedDirection);
+    }
+
+    // Remembered Email
+    const savedEmail = localStorage.getItem("resinEmail");
+
+    if (savedEmail) {
+        email.value = savedEmail;
+        remember.checked = true;
+    }
+});
+
+
+// ==========================================
+// FORM VALIDATION
+// ==========================================
+
+function showMessage(message) {
+    formMessage.textContent = message;
+    formMessage.classList.add("show");
+}
+
+function hideMessage() {
+    formMessage.textContent = "";
+    formMessage.classList.remove("show");
+}
+
+loginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    hideMessage();
+
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+    // Check empty fields
+    if (!emailValue || !passwordValue) {
+        showMessage("Please enter your email address and password.");
+        return;
+    }
+
+    // Basic email validation
+    if (!emailValue.includes("@")) {
+        showMessage("Please enter a valid email address.");
+        email.focus();
+        return;
+    }
+
+    // Remember email
+    if (remember.checked) {
+        localStorage.setItem("resinEmail", emailValue);
+    } else {
+        localStorage.removeItem("resinEmail");
+    }
+
+    // Demo login success
+    showMessage("Login successful! Redirecting...");
+
+    formMessage.style.color = "#4F7A5A";
+
+    setTimeout(function () {
+        window.location.href = "index.html";
+    }, 700);
+});
+
+
+// ==========================================
+// SOCIAL LOGIN BUTTONS
+// ==========================================
+
+document.getElementById("googleButton").addEventListener("click", function () {
+    alert("Google login is not connected yet.");
+});
+
+document.getElementById("appleButton").addEventListener("click", function () {
+    alert("Apple login is not connected yet.");
+});
+
+
+// Forgot Password Demo
+document.querySelector(".forgot-link").addEventListener("click", function (event) {
+    event.preventDefault();
+    alert("Password recovery can be added later.");
+});
+    </script>
+
+</body>
+</html>

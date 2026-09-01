@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resin Art & Home Decor Studio</title>
+    <link rel="icon" type="image/avif" sizes="64x64" href="logo-2.avif">
+
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="contact.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+</head>
+<body>
+
+      <header class="site-header" id="site-header">
+
+    <div class="container header-container">
+
+
+        <a href="index.html" class="site-logo">
+
+      <div class="logo">
+      <img src="images/logo-2.png" alt="logo-2">
+      </div>
+
+    <span class="logo-text">
+        <strong>Resin</strong>
+        <small>Art & Home Decor</small>
+    </span>
+
+</a>
+
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
+
+            <div class="nav-dropdown">
+
+    <button class="nav-dropdown-btn" type="button">
+        Home
+        <i data-lucide="chevron-down"></i>
+    </button>
+
+    <div class="dropdown-menu">
+
+        <a href="index.html" class="dropdown-link active">
+            Home 1
+        </a>
+
+        <a href="home-2.html" class="dropdown-link">
+            Home 2
+        </a>
+
+    </div>
+
+</div>
+
+            <a href="about.html" class="nav-link">About</a>
+
+            <a href="services.html" class="nav-link">Services</a>
+
+            <a href="pricing.html" class="nav-link">Pricing</a>
+
+            <a href="contact.html" class="nav-link">Contact</a>
+
+            <!-- Dashboard must be the LAST navigation link -->
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+        </nav>
+
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+
+            <!-- Dark / Light Mode -->
+            <button
+                class="header-icon-btn"
+                id="theme-btn"
+                type="button"
+                aria-label="Toggle dark mode"
+                title="Toggle dark mode">
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+            <!-- RTL -->
+            <button
+                class="header-icon-btn"
+                id="rtl-btn"
+                type="button"
+                aria-label="Toggle RTL"
+                title="Toggle RTL">
+
+               </i><i data-lucide="arrow-right-left"></i>
+
+            </button>
+
+
+
+            <!-- Primary CTA -->
+            <a href="login.html" class="btn btn-primary header-cta">
+                Get Started
+            </a>
+
+
+            <!-- Mobile Menu -->
+            <button
+                class="menu-btn"
+                id="menu-btn"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false">
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+<!-- =====================================================
+     CONTACT PAGE - HERO SECTION
+===================================================== -->
+<section class="contact-hero">
+
+    <div class="container">
+
+        <div class="contact-hero-grid">
+
+            <!-- Left Side -->
+            <div class="contact-hero-main">
+
+                <h1>
+                    Let's Create
+                    <span>Something Beautiful.</span>
+                </h1>
+
+                <div class="contact-hero-line"></div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="contact-hero-intro">
+
+                <span class="contact-intro-small">
+                    HAVE AN IDEA IN MIND?
+                </span>
+
+                <p>
+                    Whether you have a question, a custom idea, or simply
+                    want to know more about our handmade creations, we'd
+                    love to hear from you.
+                </p>
+
+                <div class="contact-intro-detail">
+                    <span>✦</span>
+                    <p>LET'S BRING YOUR IDEA TO LIFE</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     CONTACT PAGE - GET IN TOUCH
+===================================================== -->
+<section class="contact-get-in-touch">
+
+    <div class="container">
+
+        <div class="contact-section-grid">
+
+            <!-- Left Content -->
+            <div class="contact-info-content">
+
+                <h2>
+                    We'd Love to
+                    <span>Hear From You.</span>
+                </h2>
+
+                <p class="contact-info-text">
+                    Have a question, a custom idea, or something special in mind?
+                    Send us a message and let's start creating something beautiful
+                    together.
+                </p>
+
+
+                <!-- Contact Details -->
+                <div class="contact-details">
+
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">EMAIL</span>
+                        <a href="mailto:hello@yourstudio.com">
+                            hello@yourstudio.com
+                        </a>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">STUDIO HOURS</span>
+                        <p>Monday – Saturday · 10 AM – 6 PM</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+
+                <form class="contact-form">
+
+                    <div class="form-group">
+                        <label for="name">YOUR NAME</label>
+                        <input type="text" id="name"
+                               name="name"
+                               placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">EMAIL ADDRESS</label>
+                        <input type="email" id="email"
+                               name="email"
+                               placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">YOUR MESSAGE</label>
+                        <textarea id="message"
+                                  name="message"
+                                  rows="5"
+                                  placeholder="Tell us about your idea..."></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-submit-btn">
+                        Send Message <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT PAGE - CUSTOM CREATIONS
+===================================================== -->
+<section class="custom-creation-section">
+
+    <div class="container">
+
+        <div class="custom-creation-content">
+
+
+            <h2>
+                Have Something Special
+                <span>in Mind?</span>
+            </h2>
+
+            <p class="custom-creation-text">
+                From personalised resin art to meaningful home décor, we'd
+                love to hear your ideas and create something that feels
+                truly special and uniquely yours.
+            </p>
+
+            <div class="custom-creation-features">
+                <div>
+                    <span>✦</span>
+                    <p>PERSONALIZED</p>
+                </div>
+
+                <div>
+                    <span>✦</span>
+                    <p>HANDMADE</p>
+                </div>
+
+                <div>
+                    <span>✦</span>
+                    <p>UNIQUELY YOURS</p>
+                </div>
+            </div>
+
+            <a href="#contact-form" class="custom-creation-btn">
+                Share Your Idea <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT PAGE - STAY CONNECTED
+===================================================== -->
+<section class="contact-connect-section">
+
+    <div class="container">
+
+        <div class="contact-connect-content">
+
+            <!-- Heading -->
+            <h2>
+                A Little More Art,
+                <span>A Little More Love.</span>
+            </h2>
+
+            <!-- Description -->
+            <p class="contact-connect-text">
+                Follow our creative journey and discover new resin creations,
+                behind-the-scenes moments, and little pieces of inspiration
+                made with love.
+            </p>
+
+            <!-- Social Links -->
+            <div class="contact-social-links">
+
+                <!-- Change # to your actual social media links -->
+                <a href="#" class="contact-social-link">
+                    <span>✦</span>
+                    Instagram
+                </a>
+
+                <a href="#" class="contact-social-link">
+                    <span>✦</span>
+                    Pinterest
+                </a>
+
+            </div>
+
+            <!-- Button -->
+            <a href="#" class="contact-follow-btn">
+                Follow Our Journey <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     CONTACT PAGE - FINAL CTA SECTION
+===================================================== -->
+<section class="contact-final-cta">
+
+    <div class="container">
+
+        <div class="contact-final-content">
+
+            <p class="contact-final-label">LET'S CREATE TOGETHER</p>
+
+            <h2>
+                Every Beautiful Creation
+                <span>Begins With an Idea.</span>
+            </h2>
+
+            <p class="contact-final-text">
+                Whether your idea is big or small, we'd love to hear it.
+                Let's create something meaningful, beautiful, and uniquely yours.
+            </p>
+
+            <a href="#contact-form" class="contact-final-btn">
+                Start Your Journey <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <!-- Footer Main -->
+        <div class="footer-main">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+
+                <a href="index.html" class="footer-logo">
+
+                   <div class="logo">
+      <img src="images/logo-2.png" alt="logo-2">
+                   </div>
+
+                    <span class="footer-logo-text">
+                        <strong>Resin</strong>
+                        <small>Art & Home Decor Studio</small>
+                    </span>
+
+                </a>
+
+                <p>
+                    Beautiful resin art and thoughtfully designed home
+                    décor pieces, created to bring creativity and
+                    character into your space.
+                </p>
+
+                <!-- Social Icons -->
+                <div class="footer-social">
+    <a href="#" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="#" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="#" aria-label="Pinterest">
+        <i class="fa-brands fa-pinterest-p"></i>
+    </a>
+
+    <a href="#" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+</div>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <ul>
+                    <li>
+                        <a href="index.html">Home 1</a>
+                    </li>
+
+                    <li>
+                        <a href="home2.html">Home 2</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Useful Links -->
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li>
+                        <a href="pricing.html">Pricing</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                    <li>
+                        <a href="faq.html">FAQ</a>
+                    </li>
+
+                    <li>
+                        <a href="dashboard.html">Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="login.html">Login</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div class="footer-column footer-contact">
+
+                <h3>Get In Touch</h3>
+
+                <a href="mailto:hello@resinartstudio.com">
+                    <i data-lucide="mail"></i>
+                    <span>hello@resinartstudio.com</span>
+                </a>
+
+                <a href="tel:+910000000000">
+                    <i data-lucide="phone"></i>
+                    <span>+91 12345 67890</span>
+                </a>
+
+                <div class="footer-address">
+                    <i data-lucide="map-pin"></i>
+                    <span>
+                        Hyderabad, Telangana, India
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Resin Art & Home Decor Studio.
+                All rights reserved.
+            </p>
+
+            <div class="footer-legal">
+
+                <a href="#">Privacy Policy</a>
+
+                <a href="#">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+
+ 
+    /* =========================================================
+   HEADER JAVASCRIPT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const themeBtn = document.getElementById("theme-btn");
+    const rtlBtn = document.getElementById("rtl-btn");
+    const menuBtn = document.getElementById("menu-btn");
+    const mainNav = document.getElementById("main-nav");
+
+const homeDropdown = document.querySelector(".nav-dropdown");
+
+const homeDropdownBtn =
+    document.querySelector(".nav-dropdown-btn");
+
+
+if (homeDropdown && homeDropdownBtn) {
+
+    homeDropdownBtn.addEventListener("click", () => {
+
+        if (window.innerWidth <= 900) {
+
+            homeDropdown.classList.toggle("open");
+
+        }
+
+    });
+
+}
+    /* =====================================================
+       LUCIDE ICONS
+    ===================================================== */
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+
+    /* =====================================================
+       DARK / LIGHT MODE
+    ===================================================== */
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        updateThemeIcon();
+    }
+
+
+    function updateThemeIcon() {
+
+        if (!themeBtn) return;
+
+        themeBtn.innerHTML = document.body.classList.contains("dark-mode")
+            ? '<i data-lucide="sun"></i>'
+            : '<i data-lucide="moon"></i>';
+
+        if (typeof lucide !== "undefined") {
+            lucide.createIcons();
+        }
+    }
+
+
+    if (themeBtn) {
+
+        themeBtn.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark-mode");
+
+            const isDark =
+                document.body.classList.contains("dark-mode");
+
+            localStorage.setItem(
+                "theme",
+                isDark ? "dark" : "light"
+            );
+
+            updateThemeIcon();
+        });
+    }
+
+
+    /* =====================================================
+       RTL / LTR
+    ===================================================== */
+
+    const savedDirection =
+        localStorage.getItem("direction");
+
+    if (savedDirection === "rtl") {
+        document.documentElement.setAttribute("dir", "rtl");
+    }
+
+
+    if (rtlBtn) {
+
+        rtlBtn.addEventListener("click", () => {
+
+            const currentDirection =
+                document.documentElement.getAttribute("dir");
+
+            const newDirection =
+                currentDirection === "rtl"
+                    ? "ltr"
+                    : "rtl";
+
+            document.documentElement.setAttribute(
+                "dir",
+                newDirection
+            );
+
+            localStorage.setItem(
+                "direction",
+                newDirection
+            );
+        });
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    if (menuBtn && mainNav) {
+
+        menuBtn.addEventListener("click", () => {
+
+            const isOpen =
+                mainNav.classList.toggle("active");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+
+            menuBtn.innerHTML = isOpen
+                ? '<i data-lucide="x"></i>'
+                : '<i data-lucide="menu"></i>';
+
+            if (typeof lucide !== "undefined") {
+                lucide.createIcons();
+            }
+        });
+
+
+        /* Close menu after clicking a link */
+
+        const navLinks =
+            mainNav.querySelectorAll(".nav-link");
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mainNav.classList.remove("active");
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuBtn.innerHTML =
+                    '<i data-lucide="menu"></i>';
+
+                if (typeof lucide !== "undefined") {
+                    lucide.createIcons();
+                }
+            });
+
+        });
+    }
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(function (link) {
+
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+</script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
