@@ -45,312 +45,480 @@
         </div>
 
 
-        <!-- =========================
-             LOGIN CONTENT
-        ========================== -->
-        <div class="login-wrapper">
+        <div class="login-card">
 
-            <!-- CLICKABLE BRAND -->
-            <a href="index.html" class="login-brand" aria-label="Go to Home Page">
+    <!-- Logo + Brand Name -->
+    <div class="login-brand">
+        <img src="images/logo-2.png" alt="ResinBlossom Studio Logo">
 
-                <!-- Change logo path if your image is in another folder -->
-                <img src="images/logo-2.png" alt="Resin Art Logo" class="brand-logo">
+        <h2>ResinBlossom Studio</h2>
+    </div>
 
-                <span class="brand-text">
-                    Resin<span>Studio</span>
-                </span>
+    <!-- Login Heading -->
+    <div class="login-heading">
+        <h1>Welcome Back</h1>
+        <p>Sign in to your account</p>
+    </div>
 
-            </a>
+    <form>
 
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+        >
 
-            <!-- LOGIN CARD -->
-            <section class="login-card">
+        <label for="password">Password</label>
 
-                <!-- Heading -->
-                <div class="login-header">
-                    <h1>Welcome Back</h1>
-                    <p>Sign in to your account</p>
-                </div>
-
-
-                <!-- FORM -->
-                <form id="loginForm" novalidate>
-
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email"
-                            autocomplete="email"
-                        >
-                    </div>
-
-
-                    <!-- Password -->
-                    <div class="form-group">
-                        <label for="password">Password</label>
-
-                        <div class="password-wrapper">
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="Enter your password"
-                                autocomplete="current-password"
-                            >
-
-                            <button
-                                type="button"
-                                id="passwordButton"
-                                class="password-button"
-                                aria-label="Show password"
-                            >
-                                <span id="passwordIcon">👁</span>
-                            </button>
-                        </div>
-                    </div>
-
-
-                    <!-- Error Message -->
-                    <p class="form-message" id="formMessage"></p>
-
-
-                    <!-- Remember + Forgot -->
-                    <div class="form-options">
-
-                        <label class="remember-label">
-                            <input type="checkbox" id="remember">
-                            <span>Remember Me</span>
-                        </label>
-
-                        <a href="#" class="forgot-link">
-                            Forgot Password?
-                        </a>
-
-                    </div>
-
-
-                    <!-- Login -->
-                    <button type="submit" class="login-button">
-                        Login
-                    </button>
-
-
-                    <!-- Divider -->
-                    <div class="divider">
-                        <span></span>
-                        <small>OR</small>
-                        <span></span>
-                    </div>
-
-
-                    <button type="button" class="social-button" id="googleButton">
-    <i class="fa-brands fa-google social-icon google-icon"></i>
-    <span>Continue with Google</span>
-</button>
-
-                    <button type="button" class="social-button" id="appleButton">
-    <i class="fa-brands fa-apple social-icon"></i>
-    <span>Continue with Apple</span>
-</button>
-
-                </form>
-
-
-                <!-- Sign Up -->
-                <p class="signup-text">
-                    Don't have an account?
-                    <a href="signup.html">Sign Up</a>
-                </p>
-
-            </section>
-
+        <div class="password-box">
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
+            <i class="fa-regular fa-eye"></i>
         </div>
+
+        <div class="login-options">
+            <label>
+                <input type="checkbox">
+                <span>Remember Me</span>
+            </label>
+
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">
+            Login
+        </button>
+
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+        <button type="button" class="social-btn">
+            <i class="fa-brands fa-google"></i>
+            Continue with Google
+        </button>
+
+        <button type="button" class="social-btn">
+            <i class="fa-brands fa-apple"></i>
+            Continue with Apple
+        </button>
+
+        <p class="signup-text">
+            Don't have an account?
+            <a href="#">Sign Up</a>
+        </p>
+
+    </form>
+
+</div>
 
     </main>
 
-
-    <!-- JavaScript -->
-    <script>
-        // ==========================================
-// LOGIN PAGE ELEMENTS
-// ==========================================
-
-const loginForm = document.getElementById("loginForm");
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const remember = document.getElementById("remember");
-
-const passwordButton = document.getElementById("passwordButton");
-const passwordIcon = document.getElementById("passwordIcon");
-
-const themeButton = document.getElementById("themeButton");
-const themeIcon = document.getElementById("themeIcon");
-
-const rtlButton = document.getElementById("rtlButton");
-
-const formMessage = document.getElementById("formMessage");
-
-
-// ==========================================
-// SHOW / HIDE PASSWORD
-// ==========================================
-
-passwordButton.addEventListener("click", function () {
-    const isHidden = password.type === "password";
-
-    password.type = isHidden ? "text" : "password";
-    passwordIcon.textContent = isHidden ? "◉" : "👁";
-
-    passwordButton.setAttribute(
-        "aria-label",
-        isHidden ? "Hide password" : "Show password"
-    );
-});
-
-
-// ==========================================
-// DARK MODE
-// ==========================================
-
-function setTheme(theme) {
-    const isDark = theme === "dark";
-
-    document.body.classList.toggle("dark-mode", isDark);
-    themeIcon.textContent = isDark ? "☀" : "☾";
-
-    localStorage.setItem("resinTheme", theme);
-}
-
-themeButton.addEventListener("click", function () {
-    const isDark = document.body.classList.contains("dark-mode");
-
-    setTheme(isDark ? "light" : "dark");
-});
-
-
-// ==========================================
-// RTL MODE
-// ==========================================
-
-function setDirection(direction) {
-    document.documentElement.setAttribute("dir", direction);
-    localStorage.setItem("resinDirection", direction);
-}
-
-rtlButton.addEventListener("click", function () {
-    const currentDirection = document.documentElement.getAttribute("dir");
-
-    setDirection(currentDirection === "rtl" ? "ltr" : "rtl");
-});
-
-
-// ==========================================
-// LOAD SAVED SETTINGS
-// ==========================================
+<script>
+    /* ==========================================
+   LOGIN PAGE JAVASCRIPT
+   ResinBlossom Studio
+========================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Theme
-    const savedTheme = localStorage.getItem("resinTheme");
+    /* ==========================================
+       ELEMENTS
+    ========================================== */
 
-    if (savedTheme) {
-        setTheme(savedTheme);
+    const themeButton = document.getElementById("themeButton");
+    const themeIcon = document.getElementById("themeIcon");
+
+    const rtlButton = document.getElementById("rtlButton");
+
+    const loginForm = document.querySelector(".login-card form");
+
+    const passwordInput = document.getElementById("password");
+    const passwordEye = document.querySelector(".password-box i");
+
+    const emailInput = document.getElementById("email");
+
+    const socialButtons =
+        document.querySelectorAll(".social-btn");
+
+
+    /* ==========================================
+       DARK MODE
+    ========================================== */
+
+    function applyTheme(theme) {
+
+        if (theme === "dark") {
+            document.body.classList.add("dark-mode");
+
+            if (themeIcon) {
+                themeIcon.textContent = "☀";
+            }
+
+            if (themeButton) {
+                themeButton.setAttribute(
+                    "title",
+                    "Light Mode"
+                );
+            }
+
+        } else {
+            document.body.classList.remove("dark-mode");
+
+            if (themeIcon) {
+                themeIcon.textContent = "☾";
+            }
+
+            if (themeButton) {
+                themeButton.setAttribute(
+                    "title",
+                    "Dark Mode"
+                );
+            }
+        }
     }
 
-    // Direction
-    const savedDirection = localStorage.getItem("resinDirection");
 
-    if (savedDirection) {
-        setDirection(savedDirection);
+    function toggleTheme() {
+
+        const isDark =
+            document.body.classList.contains("dark-mode");
+
+        const newTheme = isDark ? "light" : "dark";
+
+        applyTheme(newTheme);
+
+        localStorage.setItem(
+            "loginTheme",
+            newTheme
+        );
     }
 
-    // Remembered Email
-    const savedEmail = localStorage.getItem("resinEmail");
 
-    if (savedEmail) {
-        email.value = savedEmail;
-        remember.checked = true;
+    /* Load saved theme */
+
+    const savedTheme =
+        localStorage.getItem("loginTheme") || "light";
+
+    applyTheme(savedTheme);
+
+
+    /* Theme button */
+
+    if (themeButton) {
+
+        themeButton.addEventListener(
+            "click",
+            toggleTheme
+        );
+
     }
+
+
+    /* ==========================================
+       RTL / LTR
+    ========================================== */
+
+    function applyDirection(direction) {
+
+        document.documentElement.setAttribute(
+            "dir",
+            direction
+        );
+
+        if (direction === "rtl") {
+
+            document.body.classList.add(
+                "rtl-mode"
+            );
+
+            if (rtlButton) {
+                rtlButton.setAttribute(
+                    "title",
+                    "Switch to LTR"
+                );
+            }
+
+        } else {
+
+            document.body.classList.remove(
+                "rtl-mode"
+            );
+
+            if (rtlButton) {
+                rtlButton.setAttribute(
+                    "title",
+                    "Switch to RTL"
+                );
+            }
+        }
+
+        localStorage.setItem(
+            "loginDirection",
+            direction
+        );
+    }
+
+
+    /* Load saved direction */
+
+    const savedDirection =
+        localStorage.getItem(
+            "loginDirection"
+        ) || "ltr";
+
+    applyDirection(savedDirection);
+
+
+    /* RTL button */
+
+    if (rtlButton) {
+
+        rtlButton.addEventListener(
+            "click",
+            function () {
+
+                const currentDirection =
+                    document.documentElement.getAttribute(
+                        "dir"
+                    ) || "ltr";
+
+                const newDirection =
+                    currentDirection === "rtl"
+                        ? "ltr"
+                        : "rtl";
+
+                applyDirection(
+                    newDirection
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       SHOW / HIDE PASSWORD
+    ========================================== */
+
+    if (passwordEye && passwordInput) {
+
+        passwordEye.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    passwordInput.type === "password"
+                ) {
+
+                    passwordInput.type = "text";
+
+                    passwordEye.classList.remove(
+                        "fa-eye"
+                    );
+
+                    passwordEye.classList.add(
+                        "fa-eye-slash"
+                    );
+
+                } else {
+
+                    passwordInput.type = "password";
+
+                    passwordEye.classList.remove(
+                        "fa-eye-slash"
+                    );
+
+                    passwordEye.classList.add(
+                        "fa-eye"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       LOGIN FORM
+    ========================================== */
+
+    if (loginForm) {
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const email =
+                    emailInput
+                        ? emailInput.value.trim()
+                        : "";
+
+                const password =
+                    passwordInput
+                        ? passwordInput.value.trim()
+                        : "";
+
+
+                /* Check email */
+
+                if (email === "") {
+
+                    alert(
+                        "Please enter your email address."
+                    );
+
+                    if (emailInput) {
+                        emailInput.focus();
+                    }
+
+                    return;
+                }
+
+
+                /* Check password */
+
+                if (password === "") {
+
+                    alert(
+                        "Please enter your password."
+                    );
+
+                    if (passwordInput) {
+                        passwordInput.focus();
+                    }
+
+                    return;
+                }
+
+
+                /* Basic email validation */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email)) {
+
+                    alert(
+                        "Please enter a valid email address."
+                    );
+
+                    emailInput.focus();
+
+                    return;
+                }
+
+
+                /*
+                   LOGIN SUCCESS
+
+                   Change dashboard.html to the
+                   actual page you want to open.
+                */
+
+                window.location.href =
+                    "dashboard.html";
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       SOCIAL BUTTONS
+    ========================================== */
+
+    socialButtons.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const buttonText =
+                        button.textContent
+                            .trim();
+
+                    alert(
+                        buttonText +
+                        " is not connected yet."
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* ==========================================
+       FORGOT PASSWORD
+    ========================================== */
+
+    const forgotPassword =
+        document.querySelector(
+            ".login-options a"
+        );
+
+    if (forgotPassword) {
+
+        forgotPassword.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Password reset functionality will be added soon."
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       SIGN UP
+    ========================================== */
+
+    const signupLink =
+        document.querySelector(
+            ".signup-text a"
+        );
+
+    if (signupLink) {
+
+        signupLink.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                /*
+                   Change this to your signup page
+                   when you create it.
+                */
+
+                window.location.href =
+                    "signup.html";
+
+            }
+        );
+
+    }
+
 });
-
-
-// ==========================================
-// FORM VALIDATION
-// ==========================================
-
-function showMessage(message) {
-    formMessage.textContent = message;
-    formMessage.classList.add("show");
-}
-
-function hideMessage() {
-    formMessage.textContent = "";
-    formMessage.classList.remove("show");
-}
-
-loginForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    hideMessage();
-
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-
-    // Check empty fields
-    if (!emailValue || !passwordValue) {
-        showMessage("Please enter your email address and password.");
-        return;
-    }
-
-    // Basic email validation
-    if (!emailValue.includes("@")) {
-        showMessage("Please enter a valid email address.");
-        email.focus();
-        return;
-    }
-
-    // Remember email
-    if (remember.checked) {
-        localStorage.setItem("resinEmail", emailValue);
-    } else {
-        localStorage.removeItem("resinEmail");
-    }
-
-    // Demo login success
-    showMessage("Login successful! Redirecting...");
-
-    formMessage.style.color = "#4F7A5A";
-
-    setTimeout(function () {
-        window.location.href = "index.html";
-    }, 700);
-});
-
-
-// ==========================================
-// SOCIAL LOGIN BUTTONS
-// ==========================================
-
-document.getElementById("googleButton").addEventListener("click", function () {
-    alert("Google login is not connected yet.");
-});
-
-document.getElementById("appleButton").addEventListener("click", function () {
-    alert("Apple login is not connected yet.");
-});
-
-
-// Forgot Password Demo
-document.querySelector(".forgot-link").addEventListener("click", function (event) {
-    event.preventDefault();
-    alert("Password recovery can be added later.");
-});
-    </script>
-
+</script>
 </body>
 </html>
