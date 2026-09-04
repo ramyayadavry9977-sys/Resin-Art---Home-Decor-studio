@@ -175,85 +175,129 @@
 
 </section>
 
-<!-- =====================================================
-     CONTACT PAGE - GET IN TOUCH
-===================================================== -->
-<section class="contact-get-in-touch">
+<section class="contact-section">
 
-    <div class="container">
+    <!-- Contact Heading -->
+    <div class="contact-heading">
+        <span>GET IN TOUCH</span>
+        <h1>
+            We'd Love to
+            <em>Hear From You.</em>
+        </h1>
+        <p>
+            Have a question, a custom idea, or something special in mind?
+            Send us a message and let's start creating something beautiful
+            together.
+        </p>
+    </div>
 
-        <div class="contact-section-grid">
+    <!-- Contact Content -->
+    <div class="contact-wrapper">
 
-            <!-- Left Content -->
-            <div class="contact-info-content">
+        <!-- Left: Contact Information -->
+        <div class="contact-info">
 
-                <h2>
-                    We'd Love to
-                    <span>Hear From You.</span>
-                </h2>
+            <div class="info-item">
+                <span class="info-label">EMAIL</span>
+                <a href="mailto:hello@yourstudio.com">
+                    hello@yourstudio.com
+                </a>
+            </div>
 
-                <p class="contact-info-text">
-                    Have a question, a custom idea, or something special in mind?
-                    Send us a message and let's start creating something beautiful
-                    together.
+            <div class="info-item">
+                <span class="info-label">PHONE</span>
+                <a href="tel:+919876543210">
+                    +91 98765 43210
+                </a>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">STUDIO HOURS</span>
+                <p>
+                    Monday – Saturday · 10 AM – 6 PM
                 </p>
+            </div>
 
+            <div class="info-item">
+                <span class="info-label">STUDIO ADDRESS</span>
+                <p>
+                    ResinBlossom Studio<br>
+                    Your City, India
+                </p>
+            </div>
 
-                <!-- Contact Details -->
-                <div class="contact-details">
+        </div>
 
-                    <div class="contact-detail">
-                        <span class="contact-detail-label">EMAIL</span>
-                        <a href="mailto:hello@yourstudio.com">
-                            hello@yourstudio.com
-                        </a>
-                    </div>
+        <!-- Right: Contact Form -->
+        <div class="contact-form-box">
 
-                    <div class="contact-detail">
-                        <span class="contact-detail-label">STUDIO HOURS</span>
-                        <p>Monday – Saturday · 10 AM – 6 PM</p>
-                    </div>
+            <form id="contactForm">
 
+                <div class="form-group">
+                    <label for="name">YOUR NAME</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
                 </div>
 
-            </div>
+                <div class="form-group">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
 
+                <div class="form-group">
+                    <label for="message">YOUR MESSAGE</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us about your idea..."
+                        required
+                    ></textarea>
+                </div>
 
-            <!-- Contact Form -->
-            <div class="contact-form-wrapper">
+                <button type="submit" class="send-btn">
+                    Send Message
+                    <span>→</span>
+                </button>
 
-                <form class="contact-form">
+            </form>
 
-                    <div class="form-group">
-                        <label for="name">YOUR NAME</label>
-                        <input type="text" id="name"
-                               name="name"
-                               placeholder="Enter your name">
-                    </div>
+        </div>
 
-                    <div class="form-group">
-                        <label for="email">EMAIL ADDRESS</label>
-                        <input type="email" id="email"
-                               name="email"
-                               placeholder="Enter your email">
-                    </div>
+    </div>
 
-                    <div class="form-group">
-                        <label for="message">YOUR MESSAGE</label>
-                        <textarea id="message"
-                                  name="message"
-                                  rows="5"
-                                  placeholder="Tell us about your idea..."></textarea>
-                    </div>
+    <!-- Map -->
+    <div class="studio-map">
 
-                    <button type="submit" class="contact-submit-btn">
-                        Send Message <span>→</span>
-                    </button>
+        <div class="map-heading">
+            <span>FIND US</span>
+            <h2>Visit Our Studio</h2>
+            <p>
+                Come by and explore our creative space.
+                We'd love to meet you.
+            </p>
+        </div>
 
-                </form>
-
-            </div>
-
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps?q=India&output=embed"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
 
     </div>
@@ -309,55 +353,6 @@
 
 </section>
 
-
-<!-- =====================================================
-     CONTACT PAGE - STAY CONNECTED
-===================================================== -->
-<section class="contact-connect-section">
-
-    <div class="container">
-
-        <div class="contact-connect-content">
-
-            <!-- Heading -->
-            <h2>
-                A Little More Art,
-                <span>A Little More Love.</span>
-            </h2>
-
-            <!-- Description -->
-            <p class="contact-connect-text">
-                Follow our creative journey and discover new resin creations,
-                behind-the-scenes moments, and little pieces of inspiration
-                made with love.
-            </p>
-
-            <!-- Social Links -->
-            <div class="contact-social-links">
-
-                <!-- Change # to your actual social media links -->
-                <a href="#" class="contact-social-link">
-                    <span>✦</span>
-                    Instagram
-                </a>
-
-                <a href="#" class="contact-social-link">
-                    <span>✦</span>
-                    Pinterest
-                </a>
-
-            </div>
-
-            <!-- Button -->
-            <a href="#" class="contact-follow-btn">
-                Follow Our Journey <span>→</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
 
 <!-- =====================================================
      CONTACT PAGE - FINAL CTA SECTION

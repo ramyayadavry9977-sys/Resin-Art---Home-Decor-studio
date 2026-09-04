@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | ResinBlossom Studio</title>
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+    <main class="signup-page">
+
+        <!-- Top Controls -->
+        <div class="top-controls">
+
+            <button
+                type="button"
+                class="control-btn"
+                id="rtlButton"
+                title="Toggle RTL"
+            >
+                ⇄
+            </button>
+
+            <button
+                type="button"
+                class="control-btn"
+                id="themeButton"
+                title="Toggle Theme"
+            >
+                <span id="themeIcon">☾</span>
+            </button>
+
+        </div>
+
+
+        <!-- Signup Card -->
+        <section class="signup-card">
+
+            <div class="card-line"></div>
+
+
+            <!-- Brand -->
+            <div class="brand">
+
+    
+    <img
+        src="images/logo-2.png"
+        alt="ResinBlossom Studio"
+        class="brand-logo"
+    >
+</a>
+
+                <span class="brand-name">
+                    Resin Blossom Studio
+                </span>
+
+            </div>
+
+
+            <!-- Heading -->
+            <div class="heading">
+
+                <h1>Create Your Account</h1>
+
+                <p>
+                    Join us and bring your creative ideas to life.
+                </p>
+
+            </div>
+
+
+            <!-- Form -->
+            <form id="signupForm" novalidate>
+
+
+                <!-- Full Name -->
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">♙</span>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                        >
+
+                    </div>
+
+                    <small
+                        class="error"
+                        id="nameError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">✉</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                        >
+
+                    </div>
+
+                    <small
+                        class="error"
+                        id="emailError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">▣</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+                            ◉
+                        </button>
+
+                    </div>
+
+                    <div class="strength">
+                        <div
+                            class="strength-bar"
+                            id="strengthBar"
+                        ></div>
+                    </div>
+
+                    <small
+                        class="error"
+                        id="passwordError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">▣</span>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="confirmPasswordToggle"
+                            aria-label="Show password"
+                        >
+                            ◉
+                        </button>
+
+                    </div>
+
+                    <small
+                        class="error"
+                        id="confirmError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Terms -->
+                <div class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                    >
+
+                    <label for="terms">
+
+                        I agree to the
+
+                        <a href="#" id="termsLink">
+                            Terms & Conditions
+                        </a>
+
+                        and
+
+                        <a href="#" id="privacyLink">
+                            Privacy Policy
+                        </a>.
+
+                    </label>
+
+                </div>
+
+                <small
+                    class="error"
+                    id="termsError"
+                ></small>
+
+
+                <!-- Create Account -->
+                <button
+                    type="submit"
+                    class="create-btn"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+
+            <!-- Social Buttons -->
+            <div class="social-buttons">
+
+                <button
+                    type="button"
+                    class="social-btn"
+                    id="googleBtn"
+                >
+                    <span class="google-icon">G</span>
+                    Google
+                </button>
+
+                <button
+    type="button"
+    class="social-btn"
+    id="appleBtn"
+>
+    <svg
+        class="apple-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            d="M17.05 12.54c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.63-1.71-3.19-1.73-1.35-.14-2.66.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.84.86-3.6 2.17-1.54 2.66-.39 6.58 1.1 8.73.73 1.05 1.59 2.22 2.73 2.18 1.1-.05 1.52-.7 2.85-.7 1.33 0 1.71.7 2.86.68 1.19-.02 1.94-1.06 2.65-2.12.83-1.22 1.17-2.4 1.19-2.46-.03-.01-2.28-.87-2.3-3.48Z"
+            fill="currentColor"
+        />
+
+        <path
+            d="M15.03 6.18c.61-.74 1.02-1.76.91-2.78-.88.04-1.95.59-2.58 1.33-.56.65-1.05 1.69-.92 2.68.98.08 1.98-.5 2.59-1.23Z"
+            fill="currentColor"
+        />
+    </svg>
+
+    Apple
+</button>
+
+            </div>
+
+
+            <!-- Login -->
+            <p class="login-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script> 
+        document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const body = document.body;
+    const html = document.documentElement;
+
+    const themeButton =
+        document.getElementById("themeButton");
+
+    const themeIcon =
+        document.getElementById("themeIcon");
+
+    const rtlButton =
+        document.getElementById("rtlButton");
+
+    const form =
+        document.getElementById("signupForm");
+
+    const fullName =
+        document.getElementById("fullName");
+
+    const email =
+        document.getElementById("email");
+
+    const password =
+        document.getElementById("password");
+
+    const confirmPassword =
+        document.getElementById("confirmPassword");
+
+    const terms =
+        document.getElementById("terms");
+
+    const strengthBar =
+        document.getElementById("strengthBar");
+
+
+    /* =====================================================
+       THEME
+    ===================================================== */
+
+    const savedTheme =
+        localStorage.getItem("signupTheme");
+
+    if (savedTheme === "dark") {
+
+        body.classList.add("dark");
+
+        themeIcon.textContent = "☀";
+
+    } else {
+
+        themeIcon.textContent = "☾";
+    }
+
+
+    themeButton.addEventListener(
+        "click",
+        function () {
+
+            body.classList.toggle("dark");
+
+            const isDark =
+                body.classList.contains("dark");
+
+            if (isDark) {
+
+                themeIcon.textContent = "☀";
+
+                localStorage.setItem(
+                    "signupTheme",
+                    "dark"
+                );
+
+            } else {
+
+                themeIcon.textContent = "☾";
+
+                localStorage.setItem(
+                    "signupTheme",
+                    "light"
+                );
+            }
+        }
+    );
+
+
+    /* =====================================================
+       RTL
+    ===================================================== */
+
+    const savedDirection =
+        localStorage.getItem("signupDirection");
+
+    if (savedDirection === "rtl") {
+
+        html.setAttribute("dir", "rtl");
+
+    } else {
+
+        html.setAttribute("dir", "ltr");
+    }
+
+
+    rtlButton.addEventListener(
+        "click",
+        function () {
+
+            const currentDirection =
+                html.getAttribute("dir");
+
+            if (currentDirection === "rtl") {
+
+                html.setAttribute(
+                    "dir",
+                    "ltr"
+                );
+
+                localStorage.setItem(
+                    "signupDirection",
+                    "ltr"
+                );
+
+            } else {
+
+                html.setAttribute(
+                    "dir",
+                    "rtl"
+                );
+
+                localStorage.setItem(
+                    "signupDirection",
+                    "rtl"
+                );
+            }
+        }
+    );
+
+
+    /* =====================================================
+       PASSWORD SHOW / HIDE
+    ===================================================== */
+
+    function setupPasswordToggle(
+        input,
+        button
+    ) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    input.type === "password"
+                ) {
+
+                    input.type = "text";
+
+                    button.textContent = "◉";
+
+                } else {
+
+                    input.type = "password";
+
+                    button.textContent = "◌";
+                }
+            }
+        );
+    }
+
+
+    setupPasswordToggle(
+        password,
+        document.getElementById(
+            "passwordToggle"
+        )
+    );
+
+
+    setupPasswordToggle(
+        confirmPassword,
+        document.getElementById(
+            "confirmPasswordToggle"
+        )
+    );
+
+
+    /* =====================================================
+       PASSWORD STRENGTH
+    ===================================================== */
+
+    password.addEventListener(
+        "input",
+        function () {
+
+            const value =
+                password.value;
+
+            let strength = 0;
+
+
+            if (value.length >= 6) {
+                strength++;
+            }
+
+            if (/[A-Z]/.test(value)) {
+                strength++;
+            }
+
+            if (/[0-9]/.test(value)) {
+                strength++;
+            }
+
+            if (
+                /[^A-Za-z0-9]/.test(value)
+            ) {
+                strength++;
+            }
+
+
+            strengthBar.style.width =
+                (strength * 25) + "%";
+        }
+    );
+
+
+    /* =====================================================
+       ERROR FUNCTIONS
+    ===================================================== */
+
+    function showError(
+        id,
+        message
+    ) {
+
+        const element =
+            document.getElementById(id);
+
+        element.textContent =
+            message;
+
+        element.classList.add("show");
+    }
+
+
+    function clearError(id) {
+
+        const element =
+            document.getElementById(id);
+
+        element.textContent = "";
+
+        element.classList.remove("show");
+    }
+
+
+    /* =====================================================
+       FORM VALIDATION
+    ===================================================== */
+
+    form.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+            let valid = true;
+
+
+            /* NAME */
+
+            clearError("nameError");
+
+            if (
+                fullName.value.trim().length < 2
+            ) {
+
+                showError(
+                    "nameError",
+                    "Please enter your full name."
+                );
+
+                valid = false;
+            }
+
+
+            /* EMAIL */
+
+            clearError("emailError");
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (
+                !emailPattern.test(
+                    email.value.trim()
+                )
+            ) {
+
+                showError(
+                    "emailError",
+                    "Please enter a valid email address."
+                );
+
+                valid = false;
+            }
+
+
+            /* PASSWORD */
+
+            clearError("passwordError");
+
+            if (
+                password.value.length < 6
+            ) {
+
+                showError(
+                    "passwordError",
+                    "Password must be at least 6 characters."
+                );
+
+                valid = false;
+            }
+
+
+            /* CONFIRM PASSWORD */
+
+            clearError("confirmError");
+
+            if (
+                confirmPassword.value !==
+                password.value
+            ) {
+
+                showError(
+                    "confirmError",
+                    "Passwords do not match."
+                );
+
+                valid = false;
+            }
+
+
+            /* TERMS */
+
+            clearError("termsError");
+
+            if (!terms.checked) {
+
+                showError(
+                    "termsError",
+                    "Please accept the Terms & Conditions."
+                );
+
+                valid = false;
+            }
+
+
+            /* SUCCESS */
+
+            if (valid) {
+
+                alert(
+                    "Account created successfully!"
+                );
+
+                window.location.href =
+                    "login.html";
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       SOCIAL BUTTONS
+    ===================================================== */
+
+    document
+        .getElementById("googleBtn")
+        .addEventListener(
+            "click",
+            function () {
+
+                alert(
+                    "Google Sign Up will be connected here."
+                );
+            }
+        );
+
+
+    document
+        .getElementById("appleBtn")
+        .addEventListener(
+            "click",
+            function () {
+
+                alert(
+                    "Apple Sign Up will be connected here."
+                );
+            }
+        );
+
+
+    /* =====================================================
+       TERMS & PRIVACY
+    ===================================================== */
+
+    document
+        .getElementById("termsLink")
+        .addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Terms & Conditions page will be connected here."
+                );
+            }
+        );
+
+
+    document
+        .getElementById("privacyLink")
+        .addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Privacy Policy page will be connected here."
+                );
+            }
+        );
+
+});
+    </script>
+
+</body>
+
+</html>
