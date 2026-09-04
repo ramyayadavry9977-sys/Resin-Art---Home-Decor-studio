@@ -392,60 +392,101 @@
 }
 
 
-/* =========================================================
-   HEADER ACTIONS
-========================================================= */
+/* =========================================
+   RIGHT SIDE
+========================================= */
 
 .header-actions {
+    width: 310px;
+
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
     gap: 9px;
 
     flex-shrink: 0;
 }
 
 
-/* =========================================================
+/* =========================================
    HEADER ICON BUTTONS
-========================================================= */
+========================================= */
 
-.header-icon-btn {
-    width: 42px;
-    height: 42px;
+.header-actions .header-icon-btn {
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+    margin: 0;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
+    box-sizing: border-box;
+
+    background: #ffffff;
+    color: #6B3F5F;
+
+    border: 1px solid #ddd3d9;
+    border-radius: 7px;
+
+    cursor: pointer;
+
     flex-shrink: 0;
 
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
+    transition: 0.25s ease;
+}
 
-    color: var(--text-color);
+.header-actions .header-icon-btn:hover {
+    background: #6B3F5F;
+    color: #D8C3A5;
 
-    transition:
-        background-color var(--transition),
-        color var(--transition),
-        border-color var(--transition);
+    border-color: #6B3F5F;
 }
 
 
-.header-icon-btn:hover {
-    background: var(--primary-color);
-    color: var(--white);
+/* =========================================
+   GET STARTED
+========================================= */
 
-    border-color: var(--primary-color);
+.header-actions .header-cta {
+    width: 125px;
+    height: 48px;
+
+    min-width: 125px;
+
+    padding: 0;
+    margin: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    background: #6B3F5F;
+    color: #ffffff;
+
+    border: 1px solid #6B3F5F;
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    flex-shrink: 0;
+
+    transition: 0.25s ease;
 }
 
-
-.header-icon-btn svg {
-    width: 19px;
-    height: 19px;
-
-    stroke-width: 1.8;
+.header-actions .header-cta:hover {
+    background: #56304C;
+    border-color: #56304C;
 }
-
 
 /* =========================================================
    HEADER CTA
@@ -614,6 +655,9 @@ body.dark-mode .site-header {
 /* =====================================================
    HOME PAGE 2 - PREMIUM HERO
 ===================================================== */
+/* =====================================================
+   PREMIUM HERO
+===================================================== */
 
 .premium-hero {
     padding: 20px 0 40px;
@@ -636,7 +680,6 @@ body.dark-mode .site-header {
 .premium-tag {
     display: inline-flex;
     align-items: center;
-
     margin-bottom: 25px;
 
     color: var(--primary-color);
@@ -645,7 +688,6 @@ body.dark-mode .site-header {
     font-weight: 600;
     letter-spacing: 0.15em;
 }
-
 
 .premium-hero-content h1 {
     max-width: 650px;
@@ -662,11 +704,12 @@ body.dark-mode .site-header {
 
 .premium-hero-content h1 span {
     display: block;
+
     color: var(--primary-color);
+
     font-style: italic;
     font-family: Georgia, serif;
 }
-
 
 .premium-hero-content p {
     max-width: 500px;
@@ -681,7 +724,7 @@ body.dark-mode .site-header {
 
 
 /* =====================================================
-   BUTTONS
+   HERO BUTTONS
 ===================================================== */
 
 .premium-hero-buttons {
@@ -690,9 +733,27 @@ body.dark-mode .site-header {
     gap: 15px;
 }
 
-.premium-primary-btn {
+.premium-hero-buttons .btn {
+    width: 183px;
+    height: 50px;
+
+    padding: 0;
+
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-radius: var(--radius-sm);
+
+    font-weight: 600;
+}
+
+
+/* Primary */
+
+.premium-primary-btn {
     gap: 12px;
 
     background: var(--primary-color);
@@ -708,6 +769,7 @@ body.dark-mode .site-header {
 
 .premium-primary-btn span {
     font-size: 1.2rem;
+
     transition: transform 0.3s ease;
 }
 
@@ -715,6 +777,8 @@ body.dark-mode .site-header {
     transform: translateX(5px);
 }
 
+
+/* Secondary */
 
 .premium-secondary-btn {
     background: transparent;
@@ -730,11 +794,12 @@ body.dark-mode .site-header {
 
 
 /* =====================================================
-   HERO VISUAL
+   HERO IMAGE AREA
 ===================================================== */
 
 .premium-hero-visual {
     position: relative;
+
     min-height: 600px;
 
     display: flex;
@@ -771,7 +836,7 @@ body.dark-mode .site-header {
 }
 
 
-/* Small Overlapping Image */
+/* Small Image */
 
 .premium-small-image {
     position: absolute;
@@ -792,31 +857,12 @@ body.dark-mode .site-header {
 .premium-small-image img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
 
-/* Decorative Number */
-
-.hero-number {
-    position: absolute;
-
-    z-index: 1;
-
-    top: 15px;
-    left: 5%;
-
-    color: var(--secondary-color);
-
-    font-family: Georgia, serif;
-    font-size: 9rem;
-    font-style: italic;
-
-    opacity: 0.8;
-}
-
-
-/* Image Label */
+/* Decorative Label */
 
 .premium-image-label {
     position: absolute;
@@ -839,6 +885,7 @@ body.dark-mode .site-header {
 .premium-image-label span {
     font-size: 0.65rem;
     letter-spacing: 0.15em;
+
     opacity: 0.7;
 }
 
@@ -847,6 +894,80 @@ body.dark-mode .site-header {
     letter-spacing: 0.08em;
 }
 
+/* =====================================================
+   PREMIUM GALLERY GRID
+===================================================== */
+
+.premium-gallery-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 0.9fr;
+    gap: 24px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   LARGE FEATURED IMAGE
+===================================================== */
+
+.premium-gallery-main {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 600px;
+
+    overflow: hidden;
+
+    border-radius: 2px;
+}
+
+.premium-gallery-main img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.premium-gallery-main:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =====================================================
+   RIGHT SIDE IMAGES
+===================================================== */
+
+.premium-gallery-side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.premium-gallery-small {
+    position: relative;
+
+    width: 100%;
+    height: 288px;
+
+    overflow: hidden;
+}
+
+.premium-gallery-small img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.premium-gallery-small:hover img {
+    transform: scale(1.04);
+}
 
 /* =====================================================
    BOTTOM DETAILS
@@ -856,7 +977,6 @@ body.dark-mode .site-header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    margin-top: 50px;
 
     border-top: 1px solid var(--border-color);
 }
@@ -1795,6 +1915,82 @@ body.dark-mode .site-header {
     font-size: 1.2rem;
 }
 
+
+
+
+
+/* =====================================================
+   LUXURY CTA BUTTONS
+===================================================== */
+
+.luxury-cta-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* Both buttons - SAME SIZE */
+
+.luxury-cta-buttons a {
+    width: 225px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    border-radius: 0;
+}
+
+
+/* =====================================================
+   PRIMARY
+===================================================== */
+
+.luxury-cta-primary {
+    gap: 12px;
+
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    border: 1px solid var(--primary-color);
+}
+
+.luxury-cta-primary:hover {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.luxury-cta-primary span {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.luxury-cta-primary:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   SECONDARY
+===================================================== */
+
+.luxury-cta-secondary {
+    background: transparent;
+    color: var(--primary-color);
+
+    border: 1px solid var(--primary-color);
+}
+
+.luxury-cta-secondary:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
 
 /* =====================================================
    RESPONSIVE DESIGN

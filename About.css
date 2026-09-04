@@ -381,14 +381,15 @@
 }
 
 
-/* =========================================================
-   HEADER ACTIONS
-========================================================= */
+/* =========================================
+   RIGHT SIDE
+========================================= */
 
 .header-actions {
+    width: 310px;
+
     display: flex;
     align-items: center;
-
     justify-content: flex-end;
 
     gap: 9px;
@@ -397,55 +398,83 @@
 }
 
 
-/* =========================================================
-   HEADER ICON BUTTON
-========================================================= */
+/* =========================================
+   HEADER ICON BUTTONS
+========================================= */
 
-.header-icon-btn {
-    width: 42px;
-    height: 42px;
+.header-actions .header-icon-btn {
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+    margin: 0;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0;
+    box-sizing: border-box;
 
-    border: 1px solid var(--border-color);
+    background: #ffffff;
+    color: #6B3F5F;
 
-    border-radius: var(--radius-sm);
-
-    background: transparent;
-
-    color: var(--text-color);
+    border: 1px solid #ddd3d9;
+    border-radius: 7px;
 
     cursor: pointer;
 
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+    flex-shrink: 0;
+
+    transition: 0.25s ease;
+}
+
+.header-actions .header-icon-btn:hover {
+    background: #6B3F5F;
+    color: #D8C3A5;
+
+    border-color: #6B3F5F;
 }
 
 
-/* Icon */
+/* =========================================
+   GET STARTED
+========================================= */
 
-.header-icon-btn svg {
-    width: 19px;
-    height: 19px;
+.header-actions .header-cta {
+    width: 125px;
+    height: 48px;
 
-    stroke-width: 1.8;
-}
+    min-width: 125px;
 
+    padding: 0;
+    margin: 0;
 
-/* Hover */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-.header-icon-btn:hover {
-    background: var(--primary-color);
+    box-sizing: border-box;
 
+    background: #6B3F5F;
     color: #ffffff;
 
-    border-color: var(--primary-color);
+    border: 1px solid #6B3F5F;
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    flex-shrink: 0;
+
+    transition: 0.25s ease;
+}
+
+.header-actions .header-cta:hover {
+    background: #56304C;
+    border-color: #56304C;
 }
 
 
@@ -1300,7 +1329,7 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
 ===================================================== */
 
 .about-values {
-    padding: 120px 0;
+    padding: 20px 0;
 }
 
 
@@ -1481,7 +1510,7 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
 ===================================================== */
 
 .creative-process-section {
-    padding: 120px 0;
+    padding: 20px 0;
 }
 
 
@@ -1670,7 +1699,7 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
 ===================================================== */
 
 .studio-story-section {
-    padding: 120px 0;
+    padding: 20px 0;
 }
 
 .studio-story-grid {
@@ -1864,7 +1893,7 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
 ===================================================== */
 
 .about-faq-section {
-    padding: 120px 0;
+    padding: 20px 0;
 }
 
 
@@ -2051,7 +2080,7 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
 ===================================================== */
 
 .about-final-cta {
-    padding: 120px 0;
+    padding: 20px 0;
 }
 
 .about-final-cta-content {

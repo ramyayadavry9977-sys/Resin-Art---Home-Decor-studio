@@ -913,7 +913,7 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
 }
 
 
-/* =========================================
+//* =========================================
    RIGHT SIDE
 ========================================= */
 
@@ -931,33 +931,36 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
 
 
 /* =========================================
-   ICON BUTTONS
+   HEADER ICON BUTTONS
 ========================================= */
 
-.header-icon {
-    width: 42px;
-    height: 42px;
+.header-actions .header-icon-btn {
+    width: 48px;
+    height: 48px;
 
-    display: flex;
+    padding: 0;
+    margin: 0;
+
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    background: #ffffff;
+    box-sizing: border-box;
 
+    background: #ffffff;
     color: #6B3F5F;
 
     border: 1px solid #ddd3d9;
-
     border-radius: 7px;
 
-    font-size: 19px;
-
     cursor: pointer;
+
+    flex-shrink: 0;
 
     transition: 0.25s ease;
 }
 
-.header-icon:hover {
+.header-actions .header-icon-btn:hover {
     background: #6B3F5F;
     color: #D8C3A5;
 
@@ -969,16 +972,20 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
    GET STARTED
 ========================================= */
 
-.get-started {
+.header-actions .header-cta {
+    width: 125px;
     height: 48px;
 
-    min-width: 134px;
+    min-width: 125px;
 
-    display: flex;
+    padding: 0;
+    margin: 0;
+
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0 20px;
+    box-sizing: border-box;
 
     background: #6B3F5F;
     color: #ffffff;
@@ -992,72 +999,15 @@ html[dir="rtl"] .nav-dropdown.open .dropdown-menu {
     font-size: 14px;
     font-weight: 600;
 
+    flex-shrink: 0;
+
     transition: 0.25s ease;
 }
 
-.get-started:hover {
+.header-actions .header-cta:hover {
     background: #56304C;
-
     border-color: #56304C;
 }
-
-
-/* =========================================
-   DARK MODE
-========================================= */
-
-body.dark-mode .site-header {
-    background: #1d181c;
-    border-bottom-color: #40343d;
-}
-
-body.dark-mode .site-nav .nav-link {
-    color: #f5efe8;
-}
-
-body.dark-mode .site-nav .nav-link:hover {
-    color: #D8C3A5;
-}
-
-body.dark-mode .site-nav .nav-link.active {
-    color: #D8C3A5 !important;
-}
-
-body.dark-mode .site-nav .nav-link.active::after {
-    background: #D8C3A5;
-}
-
-body.dark-mode .header-icon {
-    background: #282126;
-    color: #D8C3A5;
-    border-color: #4a3b45;
-}
-
-body.dark-mode .header-icon:hover {
-    background: #6B3F5F;
-}
-
-body.dark-mode .logo-name strong,
-body.dark-mode .logo-name small {
-    color: #D8C3A5;
-}
-body.dark-mode .hero-content h1 {
-    color: #ffffff;
-}
-
-body.dark-mode .hero-content h1 span {
-    color: #6B3F5F;
-}
-
-
-/* =========================================
-   RTL
-========================================= */
-
-html[dir="rtl"] .site-header {
-    direction: rtl;
-}
-
 
 /* =========================================
    RESPONSIVE
@@ -1212,7 +1162,6 @@ html[dir="rtl"] .site-header {
 /* =====================================================
    BUTTONS
 ===================================================== */
-
 /* Hero Buttons */
 .hero-buttons {
     display: flex;
@@ -1220,6 +1169,25 @@ html[dir="rtl"] .site-header {
     gap: 18px;
     margin-bottom: 30px;
 }
+
+
+/* Both buttons - SAME SIZE */
+.hero-buttons .btn {
+    width: 183px;
+    height: 50px;
+
+    padding: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    border-radius: var(--radius-sm);
+
+    font-weight: 600;
+}
+
 
 /* Primary Button - Explore Collection */
 .hero-buttons .btn-primary {
@@ -1237,20 +1205,13 @@ html[dir="rtl"] .site-header {
 
 /* Secondary Button - Our Story */
 .hero-secondary-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     gap: 8px;
-
-    padding: 12px 22px;
 
     background: transparent;
     color: var(--primary-color);
 
     border: 1px solid var(--primary-color);
-    border-radius: var(--radius-sm);
 
-    font-weight: 600;
     transition: all 0.3s ease;
 }
 
@@ -1841,7 +1802,7 @@ html[dir="rtl"] .site-header {
 
     width: 42px;
     height: 42px;
-
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1854,6 +1815,11 @@ html[dir="rtl"] .site-header {
     font-size: 1.3rem;
 
     transition: all 0.3s ease;
+}
+
+.collection-card p {
+    width: calc(100% - 70px);
+    margin-right: 70px;
 }
 
 .collection-card:hover .collection-arrow {
@@ -2394,7 +2360,6 @@ html[dir="rtl"] .site-header {
     }
 }
 
-
 /* =====================================================
    CUSTOM CREATION CTA
 ===================================================== */
@@ -2413,7 +2378,7 @@ html[dir="rtl"] .site-header {
     align-items: center;
     justify-content: space-between;
 
-    padding: 70px 80px;
+    padding: 40px 60px;
 
     background: var(--primary-color);
     border-radius: 30px;
