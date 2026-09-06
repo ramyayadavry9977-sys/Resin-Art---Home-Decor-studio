@@ -136,6 +136,59 @@ body {
 }
 
 
+/* ================= DASHBOARD LOGO ================= */
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.site-logo:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-logo .logo {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-logo .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.site-logo .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.site-logo .logo-text strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.site-logo .logo-text small {
+    margin-top: 4px;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+}
+
 /* =====================================================
    SIDEBAR LOGO
 ===================================================== */
