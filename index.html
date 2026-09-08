@@ -305,7 +305,7 @@
                 <div class="collection-content">
                     <span>01</span>
                     <h3>Resin Art</h3>
-                    <p>Unique handmade pieces filled with colour and creativity.</p>
+                    <p>Thoughtfully designed pieces that make your space feel special.</p>
 
                     <div class="collection-arrow">→</div>
                 </div>
@@ -439,7 +439,7 @@
                 </h2>
             </div>
 
-            <a href="gallery.html" class="btn gallery-btn">
+            <a href="services.html" class="btn gallery-btn">
                 View Full Gallery
                 <span>→</span>
             </a>
@@ -604,6 +604,7 @@
 <!-- =====================================================
      CUSTOM CREATION CTA
 ===================================================== -->
+
 <section class="custom-cta">
 
     <div class="container custom-cta-container">
@@ -612,7 +613,7 @@
         <div class="cta-decoration cta-decoration-one"></div>
         <div class="cta-decoration cta-decoration-two"></div>
 
-        <!-- Content -->
+        <!-- Main Content -->
         <div class="custom-cta-content">
 
             <span class="section-tag cta-tag">
@@ -630,14 +631,15 @@
                 create a piece that is uniquely yours.
             </p>
 
+            <!-- CTA Buttons -->
             <div class="cta-buttons">
 
-                <a href="contact.html" class="btn cta-primary">
-                    Start Your Custom Order
-                    <span>→</span>
+                <a href="contact.html" class="cta-primary">
+                    <span>Start Your Custom Order</span>
+                    <span class="cta-arrow">→</span>
                 </a>
 
-                <a href="gallery.html" class="btn cta-secondary">
+                <a href="gallery.html" class="cta-secondary">
                     Explore Our Work
                 </a>
 
@@ -647,10 +649,16 @@
 
         <!-- Decorative Side Element -->
         <div class="cta-art">
+
             <div class="cta-circle">
                 <span>✦</span>
             </div>
-            <p>Handmade<br>with Love</p>
+
+            <p>
+                Handmade<br>
+                with Love
+            </p>
+
         </div>
 
     </div>
@@ -1091,6 +1099,62 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
+
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+const navLinks = document.querySelectorAll(".nav-link");
+const homeDropdownBtn = document.querySelector(".nav-dropdown-btn");
+const dropdownLinks = document.querySelectorAll(".dropdown-link");
+
+
+/* Normal navigation links */
+
+navLinks.forEach(link => {
+
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+    } else {
+        link.classList.remove("active");
+    }
+
+});
+
+
+/* Home dropdown */
+
+if (
+    currentPage === "index.html" ||
+    currentPage === "" ||
+    currentPage === "home-2.html"
+) {
+    if (homeDropdownBtn) {
+        homeDropdownBtn.classList.add("active");
+    }
+}
+
+
+/* Dropdown links */
+
+dropdownLinks.forEach(link => {
+
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+    } else {
+        link.classList.remove("active");
+    }
+
+});
+
+
 </script>
     
 </body>

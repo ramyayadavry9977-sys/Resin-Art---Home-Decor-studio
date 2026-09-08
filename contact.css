@@ -1454,142 +1454,6 @@ body.dark-mode .form-group textarea {
     color: var(--muted-text);
 }
 
-/* =====================================================
-   CONTACT PAGE - CUSTOM CREATIONS
-===================================================== */
-
-.custom-creation-section {
-    padding: 110px 0;
-    background: var(--section-soft-bg);
-    transition: background 0.3s ease;
-}
-
-.custom-creation-content {
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-
-/* =====================================================
-   LABEL
-===================================================== */
-
-.custom-creation-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 25px;
-}
-
-.custom-creation-label span {
-    color: var(--primary-color);
-    font-family: Georgia, serif;
-    font-size: 1.3rem;
-    font-style: italic;
-}
-
-.custom-creation-label p {
-    margin: 0;
-    color: var(--text-light);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-}
-
-
-/* =====================================================
-   HEADING
-===================================================== */
-
-.custom-creation-content h2 {
-    margin: 0 0 22px;
-    color: var(--text-color);
-    font-size: clamp(3rem, 5vw, 5.5rem);
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-}
-
-.custom-creation-content h2 span {
-    display: block;
-    color: var(--primary-color);
-    font-family: Georgia, serif;
-    font-style: italic;
-}
-
-
-/* =====================================================
-   DESCRIPTION
-===================================================== */
-
-.custom-creation-text {
-    max-width: 600px;
-    margin: 0 auto;
-    color: var(--text-light);
-    line-height: 1.9;
-}
-
-
-/* =====================================================
-   FEATURES
-===================================================== */
-
-.custom-creation-features {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin: 40px 0;
-}
-
-.custom-creation-features div {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.custom-creation-features span {
-    color: var(--primary-color);
-}
-
-.custom-creation-features p {
-    margin: 0;
-    color: var(--text-color);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.custom-creation-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
-    padding: 15px 28px;
-
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    border: 1px solid var(--primary-color);
-
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-
-    transition: all 0.3s ease;
-}
-
-.custom-creation-btn:hover {
-    background: transparent;
-    color: var(--primary-color);
-}
 
 
 /* =====================================================
@@ -1719,18 +1583,25 @@ body.dark-mode .form-group textarea {
 ===================================================== */
 
 .contact-follow-btn {
-    display: inline-flex;
+     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     gap: 12px;
 
-    padding: 15px 28px;
+    padding: 13px 30px;
 
-    background: var(--primary-color);
+    /* Transparent button */
+    background: transparent;
+
+    /* Warm Sand */
     color: var(--secondary-color);
-    border: 1px solid var(--primary-color);
+
+    /* Warm Sand border */
+    border: 1px solid var(--secondary-color);
 
     text-decoration: none;
+
     font-size: 0.85rem;
     font-weight: 600;
 
@@ -1738,8 +1609,11 @@ body.dark-mode .form-group textarea {
 }
 
 .contact-follow-btn:hover {
-    background: transparent;
+    background: var(--secondary-color);
+
     color: var(--primary-color);
+
+    border-color: var(--secondary-color);
 }
 
 
@@ -1782,7 +1656,7 @@ body.dark-mode .form-group textarea {
 ===================================================== */
 
 .contact-final-cta {
-    padding: 120px 0;
+    padding: 40px 0;
     background: var(--primary-color);
     transition: background 0.3s ease;
 }
@@ -1853,28 +1727,45 @@ body.dark-mode .form-group textarea {
 
 /* Button */
 
+/* =====================================================
+   CONTACT FINAL BUTTON
+===================================================== */
+
 .contact-final-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     gap: 12px;
 
-    padding: 16px 30px;
+    padding: 13px 30px;
 
-    background: var(--secondary-color);
-    color: var(--primary-color);
+    /* Transparent button */
+    background: transparent;
+
+    /* Warm Sand */
+    color: var(--secondary-color);
+
+    /* Warm Sand border */
     border: 1px solid var(--secondary-color);
 
     text-decoration: none;
+
     font-size: 0.85rem;
     font-weight: 600;
 
     transition: all 0.3s ease;
 }
 
+
+/* Hover */
+
 .contact-final-btn:hover {
-    background: transparent;
-    color: var(--secondary-color);
+    background: var(--secondary-color);
+
+    color: var(--primary-color);
+
+    border-color: var(--secondary-color);
 }
 
 

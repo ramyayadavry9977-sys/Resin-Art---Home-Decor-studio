@@ -363,20 +363,22 @@
 
 
 /* Underline */
-
-.nav-link::after {
+.nav-dropdown-btn.active::after {
     content: "";
 
     position: absolute;
-    left: 0;
-    bottom: 0;
 
-    width: 0;
+    left: 0;
+
+    bottom: -3px;
+
+    width: 41px;
+
     height: 2px;
 
     background: var(--primary-color);
 
-    transition: width var(--transition);
+    border-radius: 2px;
 }
 
 
