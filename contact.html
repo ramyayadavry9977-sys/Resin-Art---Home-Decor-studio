@@ -777,6 +777,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
+
+const currentPage = window.location.pathname
+    .split("/")
+    .pop()
+    .toLowerCase();
+
+
+// Normal navigation links
+document.querySelectorAll(".nav-link").forEach(link => {
+
+    const linkPage = link
+        .getAttribute("href")
+        .split("/")
+        .pop()
+        .toLowerCase();
+
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+    }
+
+});
+
+
+// Home dropdown
+const homeBtn = document.querySelector(".nav-dropdown-btn");
+
+if (
+    currentPage === "index.html" ||
+    currentPage === "home-2.html" ||
+    currentPage === ""
+) {
+    homeBtn?.classList.add("active");
+}
+
+
+// Home dropdown links
+document.querySelectorAll(".dropdown-link").forEach(link => {
+
+    const linkPage = link
+        .getAttribute("href")
+        .split("/")
+        .pop()
+        .toLowerCase();
+
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+    }
+
+});
 </script>
     
 </body>
