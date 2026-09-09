@@ -1290,11 +1290,369 @@ body.dark-mode .site-header {
 
 
 /* =====================================================
+   HOME 2 - OUR CREATIVE STORY
+===================================================== */
+
+.creative-story-section {
+    padding: 100px 0;
+    background: var(--bg-color);
+}
+
+.creative-story-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+
+/* =====================================================
+   LEFT IMAGE AREA
+===================================================== */
+
+.creative-story-images {
+    position: relative;
+    min-height: 520px;
+}
+
+
+/* MAIN IMAGE */
+
+.story-main-image {
+    width: 82%;
+    height: 480px;
+    overflow: hidden;
+
+    border-radius: 0 100px 100px 100px;
+}
+
+.story-main-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.story-main-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* SMALL IMAGE */
+
+.story-small-image {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 220px;
+    height: 245px;
+
+    overflow: hidden;
+
+    border: 8px solid var(--bg-color);
+    border-radius: 80px 20px 80px 20px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.story-small-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.story-small-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* DECORATIVE STAR */
+
+.story-decoration {
+    position: absolute;
+
+    top: 25px;
+    right: 10px;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--secondary-color);
+    color: var(--primary-color);
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.creative-story-content {
+    max-width: 560px;
+}
+
+
+/* TAG */
+
+.story-tag {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 11px 18px;
+
+    margin-bottom: 25px;
+
+    background: var(--secondary-color);
+    color: var(--primary-color);
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+/* HEADING */
+
+.creative-story-content h2 {
+    margin: 0 0 25px;
+
+    color: var(--text-color);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 52px;
+    font-weight: 500;
+
+    line-height: 1.15;
+}
+
+.creative-story-content h2 em {
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+
+/* PARAGRAPHS */
+
+.creative-story-content p {
+    margin: 0 0 20px;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* BUTTON */
+
+.story-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+    padding: 16px 25px;
+
+    background: var(--primary-color);
+    color: #ffffff;
+
+    border: 1px solid var(--primary-color);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 4px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.story-btn span {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.story-btn:hover {
+    background: transparent;
+    color: var(--primary-color);
+
+    transform: translateY(-2px);
+}
+
+.story-btn:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .creative-story-section {
+    background: var(--bg-color);
+}
+
+body.dark-mode .story-small-image {
+    border-color: var(--bg-color);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .creative-story-section {
+        padding: 80px 0;
+    }
+
+    .creative-story-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .creative-story-images {
+        max-width: 650px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .creative-story-content {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .creative-story-content h2 {
+        font-size: 46px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .creative-story-section {
+        padding: 65px 0;
+    }
+
+    .creative-story-container {
+        width: 92%;
+        gap: 45px;
+    }
+
+    .creative-story-images {
+        min-height: 390px;
+    }
+
+    .story-main-image {
+        width: 88%;
+        height: 360px;
+
+        border-radius: 0 70px 70px 70px;
+    }
+
+    .story-small-image {
+        width: 155px;
+        height: 175px;
+
+        border-width: 6px;
+
+        border-radius: 55px 15px 55px 15px;
+    }
+
+    .story-decoration {
+        width: 48px;
+        height: 48px;
+
+        top: 10px;
+        right: 0;
+
+        font-size: 17px;
+    }
+
+    .creative-story-content h2 {
+        font-size: 38px;
+    }
+
+    .creative-story-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .story-btn {
+        width: auto;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .creative-story-images {
+        min-height: 340px;
+    }
+
+    .story-main-image {
+        height: 310px;
+    }
+
+    .story-small-image {
+        width: 135px;
+        height: 155px;
+    }
+
+    .creative-story-content h2 {
+        font-size: 33px;
+    }
+}
+
+
+/* =====================================================
    HOME PAGE 2 - PREMIUM COLLECTIONS
 ===================================================== */
 
 .premium-collections {
-    padding: 120px 0;
+    padding: 60px 0;
 }
 
 
@@ -1530,12 +1888,14 @@ body.dark-mode .site-header {
 }
 
 
+
+
 /* =====================================================
    HOME PAGE 2 - WHY CHOOSE US
 ===================================================== */
 
 .premium-why {
-    padding: 120px 0;
+    padding: 60px 0;
 }
 
 .premium-why-container {
@@ -1711,6 +2071,10 @@ body.dark-mode .site-header {
         font-size: 3rem;
     }
 }
+
+
+
+
 
 /* =====================================================
    HOME PAGE 2 - PREMIUM GALLERY
@@ -3021,4 +3385,10 @@ html[dir="rtl"] .newsletter-form .btn {
     .luxury-cta-content h2 {
         font-size: 3rem;
     }
+}
+
+
+body.dark-mode .logo-text strong,
+body.dark-mode .footer-logo-text strong {
+    color: #D8C3A5 !important;
 }

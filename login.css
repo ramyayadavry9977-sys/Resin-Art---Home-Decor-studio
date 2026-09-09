@@ -198,62 +198,104 @@ body.dark-mode .control-button {
    LOGO + BRAND
 ========================= */
 
+/* =====================================================
+   LOGIN BRAND - SAME AS WEBSITE HEADER
+===================================================== */
+
 .login-brand {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 12px;
 
-    margin-bottom: 18px;
-}
+    margin-bottom: 22px;
 
-.login-brand img {
-    width: 52px;
-    height: 52px;
-
-    object-fit: cover;
-    border-radius: 50%;
-
-    border: 1px solid #D8C3A5;
-}
-
-.login-brand h2 {
-    margin: 0;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 23px;
-    font-weight: 700;
-
-    color: #6B3F5F;
+    text-decoration: none;
+    color: inherit;
 }
 
 
+/* Logo circle */
 
-.login-logo-link {
+.login-logo {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    cursor: pointer;
-}
 
-.login-logo-link img {
-    width: 52px;
-    height: 52px;
-    object-fit: cover;
+    overflow: hidden;
+
     border-radius: 50%;
+
+    background: transparent;
+}
+
+.login-logo img {
+    width: 100%;
+    height: 100%;
+
     display: block;
-    transition: transform 0.3s ease;
+
+    object-fit: cover;
+
+    border-radius: 50%;
 }
 
-.login-logo-link:hover img {
-    transform: scale(1.05);
+
+/* Logo text */
+
+.login-logo-text {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    line-height: 1.1;
+}
+
+.login-logo-text strong {
+    margin: 0;
+
+    color: var(--primary-color);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+}
+
+.login-logo-text small {
+    margin-top: 4px;
+
+    color: var(--text-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.68rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
 }
 
 
-/* =========================
-   HEADING
-========================= */
+/* Remove link effects */
+
+.login-brand:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
 
 .login-heading {
     text-align: center;

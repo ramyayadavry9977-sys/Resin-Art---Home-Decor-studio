@@ -1557,7 +1557,7 @@ body.dark-mode .pricing-hero-image {
 
     width: 100%;
 
-    margin-top: auto;
+    margin-top: 20px;
     padding: 13px 18px;
 
     background: var(--primary-color);
@@ -4294,4 +4294,11 @@ html[dir="rtl"] .newsletter-form .btn {
     html[dir="rtl"] .newsletter-form .btn {
         border-radius: var(--radius-sm);
     }
+}
+
+
+
+body.dark-mode .logo-text strong,
+body.dark-mode .footer-logo-text strong {
+    color: #D8C3A5 !important;
 }

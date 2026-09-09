@@ -1916,7 +1916,252 @@ body.rtl .service-link:hover span {
     }
 
 }
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
 
+.why-choose-section {
+    padding: 100px 0;
+    background: var(--bg-color);
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.why-choose-heading {
+    max-width: 720px;
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.why-choose-tag {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--primary-color);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.why-choose-heading h2 {
+    margin: 0 0 20px;
+
+    color: var(--text-color);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.03em;
+}
+
+.why-choose-heading h2 span {
+    display: inline;
+
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+.why-choose-heading p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: var(--text-light);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.why-choose-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.why-choose-card {
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 35px 28px;
+
+    box-sizing: border-box;
+
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.why-choose-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--primary-color);
+
+    box-shadow: 0 15px 35px rgba(107, 63, 95, 0.10);
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.why-choose-number {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    color: var(--primary-color);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 0.85rem;
+
+    opacity: 0.65;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.why-choose-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--secondary-color);
+
+    color: var(--primary-color);
+
+    border-radius: 50%;
+}
+
+.why-choose-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.why-choose-content h3 {
+    margin: 0 0 12px;
+
+    color: var(--text-color);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.25rem;
+
+    font-weight: 600;
+}
+
+.why-choose-content p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .why-choose-card {
+    background: var(--card-color);
+
+    border-color: var(--border-color);
+}
+
+body.dark-mode .why-choose-card:hover {
+    border-color: var(--secondary-color);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .why-choose-section {
+        padding: 70px 0;
+    }
+
+    .why-choose-heading {
+        margin-bottom: 40px;
+    }
+
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .why-choose-card {
+        min-height: auto;
+
+        padding: 30px 25px;
+    }
+
+}
 
 /* =====================================================
    OUR TEAM
@@ -2193,7 +2438,347 @@ body.rtl .team-heading {
     }
 
 }
+/* =====================================================
+   SERVICES FAQ
+===================================================== */
 
+.services-faq-section {
+    padding: 100px 0;
+
+    background: var(--bg-light);
+}
+
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.services-faq-layout {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.services-faq-intro {
+    position: sticky;
+
+    top: 120px;
+}
+
+.services-faq-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--primary-color);
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.15em;
+}
+
+.services-faq-intro h2 {
+    margin: 0 0 22px;
+
+    color: var(--text-color);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.03em;
+}
+
+.services-faq-intro h2 span {
+    display: block;
+
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+.services-faq-intro > p {
+    max-width: 450px;
+
+    margin: 0 0 30px;
+
+    color: var(--text-light);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   FAQ BUTTON
+===================================================== */
+
+.services-faq-button {
+    width: 170px;
+    height: 50px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    background: var(--primary-color);
+
+    color: var(--secondary-color);
+
+    border: 1px solid var(--primary-color);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.services-faq-button:hover {
+    background: var(--secondary-color);
+
+    color: var(--primary-color);
+
+    border-color: var(--secondary-color);
+
+    transform: translateY(-2px);
+}
+
+.services-faq-button span {
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   FAQ LIST
+===================================================== */
+
+.services-faq-list {
+    width: 100%;
+}
+
+
+/* =====================================================
+   FAQ ITEM
+===================================================== */
+
+.services-faq-item {
+    border-top: 1px solid var(--border-color);
+}
+
+.services-faq-item:last-child {
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.services-faq-question {
+    width: 100%;
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 4px;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    color: var(--text-color);
+
+    border: 0;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+}
+
+.services-faq-question:hover {
+    color: var(--primary-color);
+}
+
+
+/* =====================================================
+   ACTIVE QUESTION
+===================================================== */
+
+.services-faq-item.active .services-faq-question {
+    color: var(--primary-color);
+}
+
+
+/* =====================================================
+   PLUS ICON
+===================================================== */
+
+.services-faq-icon {
+    width: 25px;
+    height: 25px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary-color);
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    transition: transform 0.3s ease;
+}
+
+.services-faq-item.active .services-faq-icon {
+    transform: rotate(45deg);
+}
+
+
+/* =====================================================
+   ANSWER
+===================================================== */
+
+.services-faq-answer {
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows 0.35s ease;
+}
+
+.services-faq-answer p {
+    overflow: hidden;
+
+    margin: 0;
+
+    padding: 0 40px 0 4px;
+
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+.services-faq-item.active .services-faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.services-faq-item.active .services-faq-answer p {
+    padding-bottom: 25px;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .services-faq-section {
+    background: var(--bg-light);
+}
+
+
+/* =====================================================
+   RTL
+===================================================== */
+
+html[dir="rtl"] .services-faq-question {
+    text-align: right;
+}
+
+html[dir="rtl"] .services-faq-answer p {
+    padding-left: 40px;
+    padding-right: 4px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .services-faq-layout {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .services-faq-intro {
+        position: static;
+
+        text-align: center;
+    }
+
+    .services-faq-intro > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .services-faq-section {
+        padding: 70px 0;
+    }
+
+    .services-faq-question {
+        min-height: 70px;
+
+        font-size: 0.9rem;
+    }
+
+    .services-faq-answer p {
+        padding-right: 30px;
+    }
+
+}
 
 
 /* =====================================================
@@ -3186,4 +3771,9 @@ html[dir="rtl"] .newsletter-form .btn {
     html[dir="rtl"] .newsletter-form .btn {
         border-radius: var(--radius-sm);
     }
+}
+
+body.dark-mode .logo-text strong,
+body.dark-mode .footer-logo-text strong {
+    color: #D8C3A5 !important;
 }

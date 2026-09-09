@@ -909,7 +909,7 @@
         <div class="pricing-faq-list">
 
             <!-- FAQ 01 -->
-            <div class="pricing-faq-item active">
+            <div class="pricing-faq-item ">
 
                 <button class="pricing-faq-question" type="button">
 
@@ -1522,6 +1522,38 @@ document.querySelectorAll(".dropdown-link").forEach(link => {
     if (linkPage === currentPage) {
         link.classList.add("active");
     }
+
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqItems = document.querySelectorAll(".pricing-faq-item");
+
+    faqItems.forEach(function (item) {
+
+        const question = item.querySelector(".pricing-faq-question");
+
+        if (!question) return;
+
+        question.addEventListener("click", function () {
+
+            const isOpen = item.classList.contains("active");
+
+            /* Close all other FAQ items */
+            faqItems.forEach(function (otherItem) {
+                otherItem.classList.remove("active");
+            });
+
+            /* Open clicked item */
+            if (!isOpen) {
+                item.classList.add("active");
+            }
+
+        });
+
+    });
 
 });
 </script>

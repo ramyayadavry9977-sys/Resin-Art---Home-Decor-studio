@@ -200,66 +200,94 @@ a {
    BRAND
 ========================================================= */
 
-.brand {
-    display: flex;
+/* =====================================================
+   SIGNUP BRAND
+   Same style as Login / Website Header
+===================================================== */
 
+.signup-brand {
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 11px;
+    gap: 12px;
 
-    margin-bottom: 14px;
+    margin-bottom: 22px;
+
+    text-decoration: none;
+    color: inherit;
 }
 
-.brand-logo {
-    width: 53px;
-    height: 53px;
+
+/* Logo */
+
+.signup-brand .logo {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background: transparent;
+}
+
+.signup-brand .logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
 
     object-fit: cover;
 
     border-radius: 50%;
-
-    border: 2px solid var(--secondary);
-
-    background: white;
-
-    padding: 2px;
 }
 
-.brand-name {
-    color: var(--primary);
 
-    font-size: 20px;
+/* Logo text */
+
+.signup-brand .logo-text {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    line-height: 1.1;
+}
+
+.signup-brand .logo-text strong {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-size: 1.05rem;
 
     font-weight: 700;
 }
 
+.signup-brand .logo-text small {
+    margin-top: 4px;
 
-.brand-logo-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--text-light);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* Remove link hover effect */
+
+.signup-brand:hover {
     text-decoration: none;
-    cursor: pointer;
+    color: inherit;
 }
-
-.brand-logo {
-    width: 52px;
-    height: 52px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.brand-logo-link:hover .brand-logo {
-    transform: scale(1.05);
-}
-
-
-
-
-
 
 
 /* =========================================================
